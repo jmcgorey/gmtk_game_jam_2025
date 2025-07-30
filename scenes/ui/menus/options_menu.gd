@@ -1,4 +1,4 @@
-extends CanvasLayer
+class_name OptionsMenu extends CanvasLayer
 
 ## Options menu to adjust the settings for the game, including
 ## - volume settings

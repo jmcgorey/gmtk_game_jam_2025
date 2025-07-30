@@ -1,9 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://cfbfk7aol3alk"]
 
-[ext_resource type="Script" uid="uid://uauo5mp0mwnt" path="res://scenes/ui/menus/options_menu.gd" id="1_evyrg"]
+[ext_resource type="Script" uid="uid://uauo5mp0mwnt" path="res://scenes/ui/menus/options_menu.gd" id="1_8sva7"]
 
 [node name="OptionsMenu" type="CanvasLayer"]
-script = ExtResource("1_evyrg")
+layer = 2
+script = ExtResource("1_8sva7")
 
 [node name="FullWindowContainer" type="MarginContainer" parent="."]
 anchors_preset = 15

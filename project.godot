@@ -22,6 +22,11 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 
+[global]
+
+show_quit_button=true
+show_quit_button.web=false
+
 [gui]
 
 theme/custom="uid://bsajj4734cps1"
