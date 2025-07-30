@@ -1,4 +1,4 @@
-class_name OptionsMenu extends CanvasLayer
+extends OverlayMenu
 
 ## Options menu to adjust the settings for the game, including
 ## - volume settings
@@ -15,11 +15,6 @@ const BUS_NAME_MASTER = 'Master'
 const BUS_NAME_MUSIC = 'Music'
 const BUS_NAME_SFX = 'SFX'
 
-## Emits when the options screen finishes opening
-signal options_opened
-
-## Emits when the "back" button is clicked
-signal options_closed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,9 +27,7 @@ func _ready() -> void:
 	
 	# Update the sliders to reflect their saved values
 	update_display()
-	
-	# Emit the options opened signal to let listeners know setup is done
-	options_opened.emit()
+
 
 ## Updates the controls on the display to reflect their values
 func update_display() -> void:
@@ -64,4 +57,4 @@ func _on_audio_slider_changed(value: float, bus_name: String) -> void:
 
 ## Fires when the "Back" button is pressed
 func _on_back_button_pressed() -> void:
-	options_closed.emit()
+	close()

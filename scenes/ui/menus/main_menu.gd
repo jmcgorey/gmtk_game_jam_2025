@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var quit_button: Button = %QuitButton
 
 var options_scene = preload('res://scenes/ui/menus/options_menu.tscn')
+var credits_scene = preload('res://scenes/ui/menus/credits_menu.tscn')
 
 
 func _ready() -> void:
@@ -25,9 +26,11 @@ func hide_quit_button_if_needed() -> void:
 	quit_button.visible = should_show_button
 
 
-func remove_child_scene(child_scene: Node) -> void:
-	if child_scene != null:
-		child_scene.queue_free()
+## Closes the target menu scene
+func remove_menu_scene(menu_scene: Node) -> void:
+	if menu_scene != null:
+		menu_scene.queue_free()
+
 
 ## Happens when the "Start" button is pressed
 func _on_start_pressed() -> void:
@@ -38,15 +41,17 @@ func _on_start_pressed() -> void:
 ## Happens when the "Options" button is pressed
 func _on_options_pressed() -> void:
 	print('Opening options')
-	var options_instance: OptionsMenu = options_scene.instantiate()
+	var options_instance: OverlayMenu = options_scene.instantiate()
 	add_child(options_instance)
-	options_instance.options_closed.connect(remove_child_scene.bind(options_instance))
+	options_instance.menu_closed.connect(remove_menu_scene.bind(options_instance))
 
 
 ## Happens when the "Credits" button is pressed
 func _on_credits_pressed() -> void:
 	print('Opening credits')
-	pass
+	var credits_instance: OverlayMenu = credits_scene.instantiate()
+	add_child(credits_instance)
+	credits_instance.menu_closed.connect(remove_menu_scene.bind(credits_instance))
 
 
 ## Happens when the "Quit" button is pressed
