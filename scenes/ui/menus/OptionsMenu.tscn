@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfbfk7aol3alk"]
+
+[ext_resource type="Script" uid="uid://uauo5mp0mwnt" path="res://scenes/ui/menus/options_menu.gd" id="1_evyrg"]
+
+[node name="OptionsMenu" type="CanvasLayer"]
+script = ExtResource("1_evyrg")
+
+[node name="FullWindowContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="FullWindowContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="FullWindowContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FullWindowContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="OptionsTitle" type="Label" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Options"
+
+[node name="OptionsContainer" type="VBoxContainer" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MasterVolumeContainer" type="VBoxContainer" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsContainer"]
+layout_mode = 2
+
+[node name="MasterVolumeLabel" type="Label" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsContainer/MasterVolumeContainer"]
+layout_mode = 2
+text = "Master volume"
+
+[node name="MasterVolumeSlider" type="HSlider" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsContainer/MasterVolumeContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="MusicVolumeContainer" type="VBoxContainer" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsContainer"]
+layout_mode = 2
+
+[node name="MusicVolumeLabel" type="Label" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsContainer/MusicVolumeContainer"]
+layout_mode = 2
+text = "Music volume"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsContainer/MusicVolumeContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="SfxVolumeContainer" type="VBoxContainer" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsContainer"]
+layout_mode = 2
+
+[node name="SfxVolumeLabel" type="Label" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsContainer/SfxVolumeContainer"]
+layout_mode = 2
+text = "Sound effects volume"
+
+[node name="SfxVolumeSlider" type="HSlider" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsContainer/SfxVolumeContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="BackButton" type="Button" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back"
