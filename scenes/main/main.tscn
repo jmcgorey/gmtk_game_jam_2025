@@ -1,0 +1,132 @@
+[gd_scene load_steps=10 format=3 uid="uid://rxs4hcjjxjca"]
+
+[ext_resource type="Script" uid="uid://c8h8etkdy3fte" path="res://scenes/main/main.gd" id="1_iuonh"]
+[ext_resource type="Resource" uid="uid://conwcl746x7q1" path="res://resources/progression_items/pi_carrier_pigeon.tres" id="2_6q06x"]
+[ext_resource type="PackedScene" uid="uid://b5mghruy3a4c2" path="res://scenes/managers/score_manager.tscn" id="2_k2fmo"]
+[ext_resource type="Texture2D" uid="uid://bb0mf72uwfgpg" path="res://assets/package.png" id="3_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://cxir1xxt517o6" path="res://scenes/ui/cards/progression_item_card.tscn" id="4_6q06x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q06x"]
+bg_color = Color(0.589048, 0.323764, 0.0629477, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k2fmo"]
+bg_color = Color(0.664388, 0.026698, 0.208358, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3cfh"]
+bg_color = Color(0.0532924, 0.42644, 0.126935, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ow5a4"]
+bg_color = Color(0.292218, 0.312838, 0.779751, 1)
+
+[node name="Main" type="CanvasLayer"]
+script = ExtResource("1_iuonh")
+prog_item = ExtResource("2_6q06x")
+
+[node name="ScoreManager" parent="." instance=ExtResource("2_k2fmo")]
+unique_name_in_owner = true
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TopBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6q06x")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="UpgradesColumn" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/UpgradesColumn"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_k2fmo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/UpgradesColumn/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="Upgrades" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/UpgradesColumn/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Upgrades"
+
+[node name="ProgressionItemCard" parent="MarginContainer/VBoxContainer/HBoxContainer/UpgradesColumn/PanelContainer/VBoxContainer" instance=ExtResource("4_6q06x")]
+layout_mode = 2
+size_flags_vertical = 1
+progression_item = ExtResource("2_6q06x")
+
+[node name="ProgressionItemCard2" parent="MarginContainer/VBoxContainer/HBoxContainer/UpgradesColumn/PanelContainer/VBoxContainer" instance=ExtResource("4_6q06x")]
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="ProgressionItemCard3" parent="MarginContainer/VBoxContainer/HBoxContainer/UpgradesColumn/PanelContainer/VBoxContainer" instance=ExtResource("4_6q06x")]
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="PackageColumn" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="PackageLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PackageColumn"]
+layout_mode = 2
+text = "Packages Delivered"
+horizontal_alignment = 1
+
+[node name="PackageCountLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PackageColumn"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="PackageButton" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer/PackageColumn"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+action_mode = 0
+texture_normal = ExtResource("3_k2fmo")
+stretch_mode = 3
+
+[node name="StoreColumn" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/StoreColumn"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_l3cfh")
+
+[node name="TestPigeonButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/StoreColumn/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Add Pigeon"
+
+[node name="BottomBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/BottomBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ow5a4")

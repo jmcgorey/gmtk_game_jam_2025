@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout="res://resources/audio_busses/default_bus_layout.tres"
 
+[autoload]
+
+GlobalEvents="*res://scenes/globals/global_events.gd"
+
 [display]
 
 window/size/viewport_width=640
@@ -35,6 +39,7 @@ show_quit_button.web=false
 [gui]
 
 theme/custom="uid://bsajj4734cps1"
+theme/custom_font="uid://cx5v2m67d67vw"
 
 [input]
 
