@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ProgressionItem" load_steps=3 format=3 uid="uid://ddii01gja3bjn"]
+
+[ext_resource type="Texture2D" uid="uid://dljwcygkycvq" path="res://assets/panel_template.png" id="1_imdyu"]
+[ext_resource type="Script" uid="uid://c35d1xgqw6imc" path="res://resources/progression_items/progression_item.gd" id="2_ouhes"]
+
+[resource]
+script = ExtResource("2_ouhes")
+id = "wormhole"
+display_name = "Package Wormhole"
+quantity = 0
+cost = 0.0
+packages_per_increment = 10000.0
+seconds_per_increment = 10.0
+background_images = Array[Texture2D]([ExtResource("1_imdyu")])

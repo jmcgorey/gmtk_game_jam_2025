@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://rxs4hcjjxjca"]
+[gd_scene load_steps=18 format=3 uid="uid://rxs4hcjjxjca"]
 
 [ext_resource type="Script" uid="uid://c8h8etkdy3fte" path="res://scenes/main/main.gd" id="1_iuonh"]
 [ext_resource type="Resource" uid="uid://conwcl746x7q1" path="res://resources/progression_items/pi_carrier_pigeon.tres" id="2_6q06x"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://dunn5upgeq07l" path="res://resources/progression_items/pi_paper_boy.tres" id="6_hujxm"]
 [ext_resource type="PackedScene" uid="uid://b1hhhl1o1n1ld" path="res://scenes/ui/cards/progression_items_container.tscn" id="6_yyfjg"]
 [ext_resource type="Resource" uid="uid://d4l0bnj60f1d5" path="res://resources/progression_items/pi_space_shuttle.tres" id="7_th5th"]
+[ext_resource type="Resource" uid="uid://ddii01gja3bjn" path="res://resources/progression_items/pi_wormhole.tres" id="8_th5th"]
 [ext_resource type="PackedScene" uid="uid://bv0ylvisgnuor" path="res://scenes/ui/cards/placeholder_shop.tscn" id="12_blune"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q06x"]
@@ -27,7 +28,7 @@ bg_color = Color(0.292218, 0.312838, 0.779751, 1)
 
 [node name="Main" type="CanvasLayer"]
 script = ExtResource("1_iuonh")
-progression_items = Array[ExtResource("5_b1x3f")]([ExtResource("2_6q06x"), ExtResource("6_hujxm"), ExtResource("5_ouso4"), ExtResource("6_blune"), ExtResource("7_th5th")])
+progression_items = Array[ExtResource("5_b1x3f")]([ExtResource("2_6q06x"), ExtResource("6_hujxm"), ExtResource("5_ouso4"), ExtResource("6_blune"), ExtResource("7_th5th"), ExtResource("8_th5th")])
 
 [node name="ScoreManager" parent="." instance=ExtResource("2_k2fmo")]
 unique_name_in_owner = true
