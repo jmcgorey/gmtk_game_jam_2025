@@ -1,4 +1,4 @@
-extends MarginContainer
+class_name ProgressionItemCard extends MarginContainer
 
 @export var progression_item: ProgressionItem
 
