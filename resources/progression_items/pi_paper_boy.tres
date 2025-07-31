@@ -1,10 +1,10 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dunn5upgeq07l"]
+[gd_resource type="Resource" script_class="ProgressionItem" load_steps=3 format=3 uid="uid://dunn5upgeq07l"]
 
 [ext_resource type="Texture2D" uid="uid://dkwbgsr52sobk" path="res://assets/paper_boy_1.png" id="1_vg5ca"]
-[ext_resource type="Script" uid="uid://dspw6bd0ix5gm" path="res://resources/progression_items/pi_carrier_pigeon.gd" id="2_vjt28"]
+[ext_resource type="Script" uid="uid://c35d1xgqw6imc" path="res://resources/progression_items/progression_item.gd" id="2_vg5ca"]
 
 [resource]
-script = ExtResource("2_vjt28")
+script = ExtResource("2_vg5ca")
 id = "paper_boy"
 display_name = "Paper Boy"
 quantity = 0

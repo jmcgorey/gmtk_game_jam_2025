@@ -1,15 +1,18 @@
-extends Node
+class_name ProgressionItemManager extends Node
 
 @export var progression_items: Array[ProgressionItem]
 @export var score_manager: ScoreManager
 
 @onready var timers: Node = %Timers
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+
+## Set up the items for the game
+func set_items(items: Array[ProgressionItem]) -> void:
+	progression_items = items
 	var num_items = progression_items.size()
 	for i in range(num_items):
 		init_timer(progression_items[i])
+
 
 ## Create a timer for a specific progression item
 func init_timer(item: ProgressionItem) -> void:
@@ -24,7 +27,6 @@ func init_timer(item: ProgressionItem) -> void:
 ## On item proc, add the total to the package count
 func on_item_timer_timeout(pi: ProgressionItem) -> void:
 	if score_manager != null:
-		print('Timeout for: ', pi.display_name)
 		var num_packages = pi.quantity * pi.packages_per_increment
 		if num_packages > 0:
 			score_manager.increment_package_count(num_packages)

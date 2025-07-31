@@ -25,7 +25,6 @@ class_name ProgressionItem extends Resource
 ## Returns the Texture2D that should be displayed as the background image
 ## `null` is returned if no images are set
 func get_background_image() -> Texture2D:
-	print('In base background fcn')
 	if background_images.size() > 0:
 		return background_images[0]
 	return null
@@ -33,7 +32,6 @@ func get_background_image() -> Texture2D:
 
 ## Returns how much it costs to purchase the next item of this type
 func get_cost() -> float:
-	print('In base cost fcn')
 	if quantity == 0:
 		return cost
 	
