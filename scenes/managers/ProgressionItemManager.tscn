@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://brwovhmk482dh"]
+[gd_scene load_steps=5 format=3 uid="uid://dqajmnxdv7y3"]
 
-[ext_resource type="Script" uid="uid://b4plwt4sud47o" path="res://scenes/managers/progression_item_manager.gd" id="1_048bi"]
+[ext_resource type="Script" path="res://scenes/managers/progression_item_manager.gd" id="1_048bi"]
 [ext_resource type="Script" uid="uid://c35d1xgqw6imc" path="res://resources/progression_items/progression_item.gd" id="2_mhfiv"]
 [ext_resource type="Resource" uid="uid://conwcl746x7q1" path="res://resources/progression_items/pi_carrier_pigeon.tres" id="3_nw50a"]
-[ext_resource type="Resource" uid="uid://dunn5upgeq07l" path="res://resources/progression_items/pi_paper_boy.tres" id="4_nw50a"]
+[ext_resource type="Resource" path="res://resources/progression_items/pi_paper_boy.tres" id="4_nw50a"]
 
 [node name="ProgressionItemManager" type="Node"]
 script = ExtResource("1_048bi")

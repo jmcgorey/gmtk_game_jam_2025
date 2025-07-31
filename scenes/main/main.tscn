@@ -5,12 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://b5mghruy3a4c2" path="res://scenes/managers/score_manager.tscn" id="2_k2fmo"]
 [ext_resource type="Texture2D" uid="uid://bb0mf72uwfgpg" path="res://assets/package.png" id="3_k2fmo"]
 [ext_resource type="Script" uid="uid://c35d1xgqw6imc" path="res://resources/progression_items/progression_item.gd" id="5_b1x3f"]
-[ext_resource type="Resource" uid="uid://civatq0n3v48x" path="res://resources/progression_items/pi_mail_truck.tres" id="5_ouso4"]
-[ext_resource type="PackedScene" uid="uid://brwovhmk482dh" path="res://scenes/managers/ProgressionItemManager.tscn" id="6_a8run"]
-[ext_resource type="Resource" uid="uid://bfhh84r0o05bb" path="res://resources/progression_items/pi_mail_boat.tres" id="6_blune"]
-[ext_resource type="Resource" uid="uid://dunn5upgeq07l" path="res://resources/progression_items/pi_paper_boy.tres" id="6_hujxm"]
-[ext_resource type="PackedScene" uid="uid://cqrlrqoxche55" path="res://scenes/ui/cards/progression_items_container.tscn" id="6_yyfjg"]
-[ext_resource type="Resource" uid="uid://boxe2md173jp4" path="res://resources/progression_items/pi_space_shuttle.tres" id="7_th5th"]
+[ext_resource type="Resource" path="res://resources/progression_items/pi_mail_truck.tres" id="5_ouso4"]
+[ext_resource type="PackedScene" path="res://scenes/managers/ProgressionItemManager.tscn" id="6_a8run"]
+[ext_resource type="Resource" uid="uid://cj8afy3kqt0pu" path="res://resources/progression_items/pi_mail_boat.tres" id="6_blune"]
+[ext_resource type="Resource" path="res://resources/progression_items/pi_paper_boy.tres" id="6_hujxm"]
+[ext_resource type="PackedScene" uid="uid://b1hhhl1o1n1ld" path="res://scenes/ui/cards/progression_items_container.tscn" id="6_yyfjg"]
+[ext_resource type="Resource" uid="uid://d4l0bnj60f1d5" path="res://resources/progression_items/pi_space_shuttle.tres" id="7_th5th"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q06x"]
 bg_color = Color(0.589048, 0.323764, 0.0629477, 1)

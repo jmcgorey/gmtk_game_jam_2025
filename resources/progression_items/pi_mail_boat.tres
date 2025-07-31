@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bfhh84r0o05bb"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cj8afy3kqt0pu"]
 
 [ext_resource type="Texture2D" uid="uid://dljwcygkycvq" path="res://assets/panel_template.png" id="1_nhxxc"]
 [ext_resource type="Script" uid="uid://dspw6bd0ix5gm" path="res://resources/progression_items/pi_carrier_pigeon.gd" id="2_0r5j7"]
