@@ -3,6 +3,9 @@ class_name PlaceholderShop extends VBoxContainer
 @export var progression_items: Array[ProgressionItem]
 @export var active_item_tracker: ActiveItemTracker
 
+func _ready():
+	set_items(progression_items)
+
 func set_items(items: Array[ProgressionItem]) -> void:
 	progression_items = items
 	

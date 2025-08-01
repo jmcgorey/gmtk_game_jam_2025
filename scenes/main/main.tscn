@@ -1,16 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://rxs4hcjjxjca"]
+[gd_scene load_steps=14 format=3 uid="uid://rxs4hcjjxjca"]
 
 [ext_resource type="Script" uid="uid://c8h8etkdy3fte" path="res://scenes/main/main.gd" id="1_iuonh"]
 [ext_resource type="Resource" uid="uid://conwcl746x7q1" path="res://resources/progression_items/pi_carrier_pigeon.tres" id="2_6q06x"]
 [ext_resource type="PackedScene" uid="uid://b5mghruy3a4c2" path="res://scenes/managers/score_manager.tscn" id="2_k2fmo"]
-[ext_resource type="Texture2D" uid="uid://bb0mf72uwfgpg" path="res://assets/package.png" id="3_k2fmo"]
 [ext_resource type="Script" uid="uid://c35d1xgqw6imc" path="res://resources/progression_items/progression_item.gd" id="5_b1x3f"]
-[ext_resource type="Resource" uid="uid://civatq0n3v48x" path="res://resources/progression_items/pi_mail_truck.tres" id="5_ouso4"]
-[ext_resource type="Resource" uid="uid://cj8afy3kqt0pu" path="res://resources/progression_items/pi_mail_boat.tres" id="6_blune"]
+[ext_resource type="PackedScene" uid="uid://bv3mis00dsbbc" path="res://scenes/ui/BoxButtonPanel.tscn" id="5_ow5a4"]
 [ext_resource type="Resource" uid="uid://dunn5upgeq07l" path="res://resources/progression_items/pi_paper_boy.tres" id="6_hujxm"]
 [ext_resource type="PackedScene" uid="uid://b1hhhl1o1n1ld" path="res://scenes/ui/cards/active_items_viewer.tscn" id="6_yyfjg"]
-[ext_resource type="Resource" uid="uid://d4l0bnj60f1d5" path="res://resources/progression_items/pi_space_shuttle.tres" id="7_th5th"]
-[ext_resource type="Resource" uid="uid://ddii01gja3bjn" path="res://resources/progression_items/pi_wormhole.tres" id="8_th5th"]
 [ext_resource type="PackedScene" uid="uid://dd4geluil3yiq" path="res://scenes/trackers/active_item_tracker.tscn" id="10_7smn1"]
 [ext_resource type="PackedScene" uid="uid://bv0ylvisgnuor" path="res://scenes/ui/cards/placeholder_shop.tscn" id="12_blune"]
 
@@ -28,7 +24,6 @@ bg_color = Color(0.292218, 0.312838, 0.779751, 1)
 
 [node name="Main" type="CanvasLayer"]
 script = ExtResource("1_iuonh")
-progression_items = Array[ExtResource("5_b1x3f")]([ExtResource("2_6q06x"), ExtResource("6_hujxm"), ExtResource("5_ouso4"), ExtResource("6_blune"), ExtResource("7_th5th"), ExtResource("8_th5th")])
 
 [node name="ActiveItemTracker" parent="." instance=ExtResource("10_7smn1")]
 
@@ -79,31 +74,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="PackageLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PackageColumn"]
+[node name="BoxButtonPanel" parent="MarginContainer/VBoxContainer/HBoxContainer/PackageColumn" node_paths=PackedStringArray("score_manager") instance=ExtResource("5_ow5a4")]
 layout_mode = 2
-text = "Packages Delivered"
-horizontal_alignment = 1
-
-[node name="PackageCountLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PackageColumn"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "0"
-horizontal_alignment = 1
-
-[node name="PackageButton" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer/PackageColumn"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-action_mode = 0
-texture_normal = ExtResource("3_k2fmo")
-stretch_mode = 3
-
-[node name="AvgCountLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PackageColumn"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 8
-text = "0 / sec"
-horizontal_alignment = 1
+score_manager = NodePath("../../../../../ScoreManager")
 
 [node name="StoreColumn" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -116,6 +89,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_l3cfh")
 
 [node name="PlaceholderShop" parent="MarginContainer/VBoxContainer/HBoxContainer/StoreColumn/PanelContainer" node_paths=PackedStringArray("active_item_tracker") instance=ExtResource("12_blune")]
 layout_mode = 2
+progression_items = Array[ExtResource("5_b1x3f")]([ExtResource("2_6q06x"), ExtResource("6_hujxm")])
 active_item_tracker = NodePath("../../../../../../ActiveItemTracker")
 
 [node name="BottomBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv3mis00dsbbc"]
+
+[ext_resource type="Script" uid="uid://dk6wl2sd84ns0" path="res://scenes/ui/box_button_panel.gd" id="1_vrg8v"]
+[ext_resource type="Texture2D" uid="uid://bb0mf72uwfgpg" path="res://assets/package.png" id="2_mf0jo"]
+
+[node name="BoxButtonPanel" type="PanelContainer"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_vrg8v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="PackageLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Packages Delivered"
+horizontal_alignment = 1
+
+[node name="PackageCountLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="PackageButton" type="TextureButton" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+action_mode = 0
+texture_normal = ExtResource("2_mf0jo")
+stretch_mode = 3
+
+[node name="AvgCountLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0 / sec"
+horizontal_alignment = 1
