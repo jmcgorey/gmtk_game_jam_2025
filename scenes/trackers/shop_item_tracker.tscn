@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3bn14l43yjx0"]
+
+[ext_resource type="Script" uid="uid://dk350siv4emx5" path="res://scenes/trackers/shop_item_tracker.gd" id="1_qni4c"]
+
+[node name="ShopItemTracker" type="Node"]
+script = ExtResource("1_qni4c")
