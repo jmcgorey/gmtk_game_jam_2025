@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvwep6rm04033"]
+
+[ext_resource type="Script" uid="uid://bnoyyqglqhn80" path="res://scenes/managers/item_definition_provider.gd" id="1_e3pc4"]
+
+[node name="ItemDefinitionProvider" type="Node"]
+script = ExtResource("1_e3pc4")

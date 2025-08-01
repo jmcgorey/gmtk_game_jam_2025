@@ -35,6 +35,7 @@ window/stretch/mode="canvas_items"
 
 show_quit_button=true
 show_quit_button.web=false
+item_definition_path="res://resources/item_definitions/items"
 
 [gui]
 
