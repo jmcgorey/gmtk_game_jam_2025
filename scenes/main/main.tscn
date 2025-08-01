@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://rxs4hcjjxjca"]
+[gd_scene load_steps=19 format=3 uid="uid://rxs4hcjjxjca"]
 
 [ext_resource type="Script" uid="uid://c8h8etkdy3fte" path="res://scenes/main/main.gd" id="1_iuonh"]
 [ext_resource type="Resource" uid="uid://conwcl746x7q1" path="res://resources/progression_items/pi_carrier_pigeon.tres" id="2_6q06x"]
@@ -9,9 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://dqajmnxdv7y3" path="res://scenes/managers/ProgressionItemManager.tscn" id="6_a8run"]
 [ext_resource type="Resource" uid="uid://cj8afy3kqt0pu" path="res://resources/progression_items/pi_mail_boat.tres" id="6_blune"]
 [ext_resource type="Resource" uid="uid://dunn5upgeq07l" path="res://resources/progression_items/pi_paper_boy.tres" id="6_hujxm"]
-[ext_resource type="PackedScene" uid="uid://b1hhhl1o1n1ld" path="res://scenes/ui/cards/progression_items_container.tscn" id="6_yyfjg"]
+[ext_resource type="PackedScene" uid="uid://b1hhhl1o1n1ld" path="res://scenes/ui/cards/active_items_viewer.tscn" id="6_yyfjg"]
 [ext_resource type="Resource" uid="uid://d4l0bnj60f1d5" path="res://resources/progression_items/pi_space_shuttle.tres" id="7_th5th"]
 [ext_resource type="Resource" uid="uid://ddii01gja3bjn" path="res://resources/progression_items/pi_wormhole.tres" id="8_th5th"]
+[ext_resource type="PackedScene" uid="uid://dd4geluil3yiq" path="res://scenes/trackers/active_item_tracker.tscn" id="10_7smn1"]
 [ext_resource type="PackedScene" uid="uid://bv0ylvisgnuor" path="res://scenes/ui/cards/placeholder_shop.tscn" id="12_blune"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q06x"]
@@ -32,6 +33,8 @@ progression_items = Array[ExtResource("5_b1x3f")]([ExtResource("2_6q06x"), ExtRe
 
 [node name="ScoreManager" parent="." instance=ExtResource("2_k2fmo")]
 unique_name_in_owner = true
+
+[node name="ActiveItemTracker" parent="." instance=ExtResource("10_7smn1")]
 
 [node name="ProgressionItemManager" parent="." node_paths=PackedStringArray("score_manager") instance=ExtResource("6_a8run")]
 unique_name_in_owner = true
@@ -70,9 +73,10 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_k2fmo")
 
-[node name="ProgressionItemsContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/UpgradesColumn/PanelContainer" instance=ExtResource("6_yyfjg")]
+[node name="ActiveItemsViewer" parent="MarginContainer/VBoxContainer/HBoxContainer/UpgradesColumn/PanelContainer" node_paths=PackedStringArray("item_tracker") instance=ExtResource("6_yyfjg")]
 unique_name_in_owner = true
 layout_mode = 2
+item_tracker = NodePath("../../../../../../ActiveItemTracker")
 
 [node name="PackageColumn" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -107,8 +111,9 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_l3cfh")
 
-[node name="PlaceholderShop" parent="MarginContainer/VBoxContainer/HBoxContainer/StoreColumn/PanelContainer" instance=ExtResource("12_blune")]
+[node name="PlaceholderShop" parent="MarginContainer/VBoxContainer/HBoxContainer/StoreColumn/PanelContainer" node_paths=PackedStringArray("active_item_tracker") instance=ExtResource("12_blune")]
 layout_mode = 2
+active_item_tracker = NodePath("../../../../../../ActiveItemTracker")
 
 [node name="BottomBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)

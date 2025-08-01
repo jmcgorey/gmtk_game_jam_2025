@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd4geluil3yiq"]
+
+[ext_resource type="Script" uid="uid://cek45c1iodk3s" path="res://scenes/trackers/active_item_tracker.gd" id="1_b03de"]
+
+[node name="ActiveItemTracker" type="Node"]
+script = ExtResource("1_b03de")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bir77j7st6bae"]
+
+[sub_resource type="GDScript" id="GDScript_t5uem"]
+script/source = "extends Node
+
+var shopItems: Dictionary = {}
+"
+
+[node name="StoreTracker" type="Node"]
+script = SubResource("GDScript_t5uem")

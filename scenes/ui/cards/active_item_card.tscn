@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxir1xxt517o6"]
 
-[ext_resource type="Script" uid="uid://cvrhgnag0ljqu" path="res://scenes/ui/cards/progression_item_card.gd" id="1_8ns5p"]
+[ext_resource type="Script" uid="uid://cvrhgnag0ljqu" path="res://scenes/ui/cards/active_item_card.gd" id="1_8ns5p"]
 [ext_resource type="StyleBox" uid="uid://bgtvxxge173v" path="res://resources/theme/progression_item_container_stylebox.tres" id="2_8ns5p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pimr"]

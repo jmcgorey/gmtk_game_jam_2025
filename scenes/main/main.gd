@@ -3,7 +3,6 @@ extends CanvasLayer
 @onready var package_button: TextureButton = %PackageButton
 @onready var package_count_label: Label = %PackageCountLabel
 
-@onready var progression_items_container: ProgressionItemContainer = %ProgressionItemsContainer
 @onready var progression_item_manager: ProgressionItemManager = %ProgressionItemManager
 @onready var placeholder_shop: PlaceholderShop = $MarginContainer/VBoxContainer/HBoxContainer/StoreColumn/PanelContainer/PlaceholderShop
 @onready var score_manager: ScoreManager = %ScoreManager
@@ -21,7 +20,6 @@ func _ready() -> void:
 
 ## Send the progression item list to all components that care about it
 func update_item_subscribers():
-	progression_items_container.set_progression_items(progression_items)
 	progression_item_manager.set_items(progression_items)
 	placeholder_shop.set_items(progression_items)
 
