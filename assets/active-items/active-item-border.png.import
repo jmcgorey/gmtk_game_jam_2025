@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kdqhjcpmxmpt"
-path="res://.godot/imported/prog-card-border.png-2805924d9adbe774ef3219381fd56884.ctex"
+path="res://.godot/imported/active-item-border.png-d8432879f7aff59a5e89df392dd56b8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/prog-card-border.png"
-dest_files=["res://.godot/imported/prog-card-border.png-2805924d9adbe774ef3219381fd56884.ctex"]
+source_file="res://assets/active-items/active-item-border.png"
+dest_files=["res://.godot/imported/active-item-border.png-d8432879f7aff59a5e89df392dd56b8e.ctex"]
 
 [params]
 

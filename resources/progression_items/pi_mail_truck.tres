@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ProgressionItem" load_steps=3 format=3 uid="uid://civatq0n3v48x"]
 
-[ext_resource type="Texture2D" uid="uid://dljwcygkycvq" path="res://assets/panel_template.png" id="1_q0po3"]
+[ext_resource type="Texture2D" uid="uid://dljwcygkycvq" path="res://assets/active-items/panel-template.png" id="1_q0po3"]
 [ext_resource type="Script" uid="uid://c35d1xgqw6imc" path="res://resources/progression_items/progression_item.gd" id="2_q0po3"]
 
 [resource]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkwbgsr52sobk"
-path="res://.godot/imported/paper_boy_1.png-9509d308fbf020fe5c3f6fb79b19421d.ctex"
+uid="uid://dljwcygkycvq"
+path="res://.godot/imported/panel-template.png-e031aa64cff0aa9ab1b17c63d14bfc2f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/paper_boy_1.png"
-dest_files=["res://.godot/imported/paper_boy_1.png-9509d308fbf020fe5c3f6fb79b19421d.ctex"]
+source_file="res://assets/active-items/panel-template.png"
+dest_files=["res://.godot/imported/panel-template.png-e031aa64cff0aa9ab1b17c63d14bfc2f.ctex"]
 
 [params]
 

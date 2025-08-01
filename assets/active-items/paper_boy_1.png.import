@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cql5lfhy3r0tf"
-path="res://.godot/imported/pigeon_2.png-bb04dd80910a0d5c1a34b9ee0a8d9ee5.ctex"
+uid="uid://dkwbgsr52sobk"
+path="res://.godot/imported/paper_boy_1.png-e18ce5ef50e5640532e036d75152e077.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pigeon_2.png"
-dest_files=["res://.godot/imported/pigeon_2.png-bb04dd80910a0d5c1a34b9ee0a8d9ee5.ctex"]
+source_file="res://assets/active-items/paper_boy_1.png"
+dest_files=["res://.godot/imported/paper_boy_1.png-e18ce5ef50e5640532e036d75152e077.ctex"]
 
 [params]
 
