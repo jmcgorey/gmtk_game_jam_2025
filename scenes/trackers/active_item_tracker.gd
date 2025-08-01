@@ -14,7 +14,7 @@ class ActiveItem extends Resource:
 	var texture: Texture2D
 	
 	func debug() -> String:
-		return display_name + '[' + id + ']: ' + 'count= ' + str(count) + ', ips=' + str(items_per_second)
+		return display_name + '[' + id + ']: ' + 'count=' + str(count) + ', base_ips=' + str(items_per_second) + ', total_ips=' + str(items_per_second * count)
 
 ## First when an item is added to the list
 signal item_added(item_id: String)

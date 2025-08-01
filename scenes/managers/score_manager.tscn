@@ -4,3 +4,7 @@
 
 [node name="ScoreManager" type="Node"]
 script = ExtResource("1_cjksi")
+
+[node name="ScoreTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+autostart = true

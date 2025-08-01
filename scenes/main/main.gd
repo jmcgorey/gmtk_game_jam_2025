@@ -2,8 +2,9 @@ extends CanvasLayer
 
 @onready var package_button: TextureButton = %PackageButton
 @onready var package_count_label: Label = %PackageCountLabel
+@onready var avg_count_label: Label = %AvgCountLabel
 
-@onready var progression_item_manager: ProgressionItemManager = %ProgressionItemManager
+#@onready var progression_item_manager: ProgressionItemManager = %ProgressionItemManager
 @onready var placeholder_shop: PlaceholderShop = $MarginContainer/VBoxContainer/HBoxContainer/StoreColumn/PanelContainer/PlaceholderShop
 @onready var score_manager: ScoreManager = %ScoreManager
 
@@ -20,7 +21,7 @@ func _ready() -> void:
 
 ## Send the progression item list to all components that care about it
 func update_item_subscribers():
-	progression_item_manager.set_items(progression_items)
+	#progression_item_manager.set_items(progression_items)
 	placeholder_shop.set_items(progression_items)
 
 
@@ -30,5 +31,6 @@ func on_package_button_clicked() -> void:
 
 
 ## Runs when the package count updates
-func on_package_count_changed(new_count: float) -> void:
+func on_package_count_changed(new_count: float, avg_score_per_sec: float) -> void:
 	package_count_label.text = str(floori(new_count))
+	avg_count_label.text = str(floori(avg_score_per_sec)) + ' / sec' 

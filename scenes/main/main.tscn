@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://rxs4hcjjxjca"]
+[gd_scene load_steps=18 format=3 uid="uid://rxs4hcjjxjca"]
 
 [ext_resource type="Script" uid="uid://c8h8etkdy3fte" path="res://scenes/main/main.gd" id="1_iuonh"]
 [ext_resource type="Resource" uid="uid://conwcl746x7q1" path="res://resources/progression_items/pi_carrier_pigeon.tres" id="2_6q06x"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bb0mf72uwfgpg" path="res://assets/package.png" id="3_k2fmo"]
 [ext_resource type="Script" uid="uid://c35d1xgqw6imc" path="res://resources/progression_items/progression_item.gd" id="5_b1x3f"]
 [ext_resource type="Resource" uid="uid://civatq0n3v48x" path="res://resources/progression_items/pi_mail_truck.tres" id="5_ouso4"]
-[ext_resource type="PackedScene" uid="uid://dqajmnxdv7y3" path="res://scenes/managers/ProgressionItemManager.tscn" id="6_a8run"]
 [ext_resource type="Resource" uid="uid://cj8afy3kqt0pu" path="res://resources/progression_items/pi_mail_boat.tres" id="6_blune"]
 [ext_resource type="Resource" uid="uid://dunn5upgeq07l" path="res://resources/progression_items/pi_paper_boy.tres" id="6_hujxm"]
 [ext_resource type="PackedScene" uid="uid://b1hhhl1o1n1ld" path="res://scenes/ui/cards/active_items_viewer.tscn" id="6_yyfjg"]
@@ -31,14 +30,11 @@ bg_color = Color(0.292218, 0.312838, 0.779751, 1)
 script = ExtResource("1_iuonh")
 progression_items = Array[ExtResource("5_b1x3f")]([ExtResource("2_6q06x"), ExtResource("6_hujxm"), ExtResource("5_ouso4"), ExtResource("6_blune"), ExtResource("7_th5th"), ExtResource("8_th5th")])
 
-[node name="ScoreManager" parent="." instance=ExtResource("2_k2fmo")]
-unique_name_in_owner = true
-
 [node name="ActiveItemTracker" parent="." instance=ExtResource("10_7smn1")]
 
-[node name="ProgressionItemManager" parent="." node_paths=PackedStringArray("score_manager") instance=ExtResource("6_a8run")]
+[node name="ScoreManager" parent="." node_paths=PackedStringArray("active_item_tracker") instance=ExtResource("2_k2fmo")]
 unique_name_in_owner = true
-score_manager = NodePath("../ScoreManager")
+active_item_tracker = NodePath("../ActiveItemTracker")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -101,6 +97,13 @@ size_flags_horizontal = 4
 action_mode = 0
 texture_normal = ExtResource("3_k2fmo")
 stretch_mode = 3
+
+[node name="AvgCountLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PackageColumn"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0 / sec"
+horizontal_alignment = 1
 
 [node name="StoreColumn" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
