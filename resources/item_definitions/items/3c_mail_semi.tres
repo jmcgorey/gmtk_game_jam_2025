@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemDefinition" load_steps=3 format=3 uid="uid://ca88bj7vjodvp"]
+
+[ext_resource type="Script" uid="uid://brdiwydichfu3" path="res://resources/item_definitions/scripts/item_definition.gd" id="1_hsh65"]
+[ext_resource type="Texture2D" uid="uid://d2eayqbc4yq4h" path="res://assets/shop-items/mail_semi.png" id="2_hsh65"]
+
+[resource]
+script = ExtResource("1_hsh65")
+id = "mail_semi"
+display_name = "Semi"
+items_per_second = 1000
+store_slot = 2
+base_cost = 10000
+reveal_cost = 0
+cost_scaler = 0.25
+available_at_start = false
+shop_texture = ExtResource("2_hsh65")

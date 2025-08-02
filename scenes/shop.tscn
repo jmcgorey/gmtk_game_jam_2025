@@ -19,20 +19,20 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "-- Shop --"
-horizontal_alignment = 1
-
-[node name="ShopItemsViewer" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_xfvoa")]
-unique_name_in_owner = true
-layout_mode = 2
-
 [node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "-- Upgrades --"
 horizontal_alignment = 1
 
 [node name="ShopUpgradesViewer" parent="ScrollContainer/VBoxContainer" instance=ExtResource("3_1l46r")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "-- Delivery Methods --"
+horizontal_alignment = 1
+
+[node name="ShopItemsViewer" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_xfvoa")]
 unique_name_in_owner = true
 layout_mode = 2

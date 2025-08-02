@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemUpgrade" load_steps=3 format=3 uid="uid://b81k3fe3f7nng"]
+
+[ext_resource type="Script" uid="uid://d04mqaknujtmy" path="res://resources/upgrade_definitions/scripts/item_upgrade.gd" id="1_gbk0p"]
+[ext_resource type="Texture2D" uid="uid://depqoprojqo3k" path="res://assets/shop-items/space_elevator.png" id="2_gbk0p"]
+
+[resource]
+script = ExtResource("1_gbk0p")
+from_item_id = "space_shuttle"
+to_item_id = "space_elevator"
+id = "space_shuttle_to_space_elevator"
+display_name = "Upgrade Space Shuttles to Space Elevators"
+cost = 0
+reveal_cost = 0
+is_available = false
+is_purchased = false
+texture = ExtResource("2_gbk0p")

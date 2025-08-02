@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemUpgrade" load_steps=3 format=3 uid="uid://1q22la6oqukh"]
+
+[ext_resource type="Script" uid="uid://d04mqaknujtmy" path="res://resources/upgrade_definitions/scripts/item_upgrade.gd" id="1_fbk2e"]
+[ext_resource type="Texture2D" uid="uid://da1x3g2xiwovu" path="res://assets/shop-items/courier.png" id="2_fbk2e"]
+
+[resource]
+script = ExtResource("1_fbk2e")
+from_item_id = "runner"
+to_item_id = "courier"
+id = "runner_to_courier"
+display_name = "Upgrade Runners to Couriers"
+cost = 0
+reveal_cost = 0
+is_available = false
+is_purchased = false
+texture = ExtResource("2_fbk2e")

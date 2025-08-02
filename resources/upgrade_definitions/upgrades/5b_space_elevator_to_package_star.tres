@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemUpgrade" load_steps=3 format=3 uid="uid://bv38kqmtgg6lx"]
+
+[ext_resource type="Script" uid="uid://d04mqaknujtmy" path="res://resources/upgrade_definitions/scripts/item_upgrade.gd" id="1_g42u1"]
+[ext_resource type="Texture2D" uid="uid://ddb3nda3n4e0v" path="res://assets/shop-items/package_star.png" id="2_g42u1"]
+
+[resource]
+script = ExtResource("1_g42u1")
+from_item_id = "space_elevator"
+to_item_id = "package_star"
+id = "space_elevator_to_package_star"
+display_name = "Upgrade Space Elevators to Package Stars"
+cost = 0
+reveal_cost = 0
+is_available = false
+is_purchased = false
+texture = ExtResource("2_g42u1")

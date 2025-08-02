@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemUpgrade" load_steps=3 format=3 uid="uid://5c6usi6tcywh"]
+
+[ext_resource type="Script" uid="uid://d04mqaknujtmy" path="res://resources/upgrade_definitions/scripts/item_upgrade.gd" id="1_pac3n"]
+[ext_resource type="Texture2D" uid="uid://e8u7dy2uuk3s" path="res://assets/shop-items/speedboat.png" id="2_pac3n"]
+
+[resource]
+script = ExtResource("1_pac3n")
+from_item_id = "mail_kayak"
+to_item_id = "mail_speedboat"
+id = "mail_kayak_to_mail_speedboat"
+display_name = "Upgrade Kayaks to Speedboats"
+cost = 0
+reveal_cost = 0
+is_available = false
+is_purchased = false
+texture = ExtResource("2_pac3n")
