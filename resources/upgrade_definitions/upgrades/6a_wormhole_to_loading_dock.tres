@@ -1,16 +1,16 @@
 [gd_resource type="Resource" script_class="ItemUpgrade" load_steps=3 format=3 uid="uid://ccikkym068ram"]
 
-[ext_resource type="Script" uid="uid://d04mqaknujtmy" path="res://resources/upgrade_definitions/scripts/item_upgrade.gd" id="1_uvwbr"]
-[ext_resource type="Texture2D" uid="uid://btmxaepev8kg8" path="res://assets/shop-items/interdimensional_loading_dock.png" id="2_kr8fw"]
+[ext_resource type="Script" uid="uid://d04mqaknujtmy" path="res://resources/upgrade_definitions/scripts/item_upgrade.gd" id="1_a7mph"]
+[ext_resource type="Texture2D" uid="uid://btmxaepev8kg8" path="res://assets/shop-items/interdimensional_loading_dock.png" id="2_cc2er"]
 
 [resource]
-script = ExtResource("1_uvwbr")
+script = ExtResource("1_a7mph")
 from_item_id = "package_wormhole"
 to_item_id = "interdimensional_loading_dock"
 id = "package_wormhole_to_loading_dock"
 display_name = "Upgrade Wormholes to Interdimensional Loading Docks"
-cost = 0
+cost = 1000000000
 reveal_cost = 0
 is_available = false
 is_purchased = false
-texture = ExtResource("2_kr8fw")
+texture = ExtResource("2_cc2er")

@@ -1,16 +1,16 @@
 [gd_resource type="Resource" script_class="ItemUpgrade" load_steps=3 format=3 uid="uid://d3kwse0yib7c4"]
 
-[ext_resource type="Script" uid="uid://d04mqaknujtmy" path="res://resources/upgrade_definitions/scripts/item_upgrade.gd" id="1_5f87l"]
-[ext_resource type="Texture2D" uid="uid://emmaegp4x364" path="res://assets/shop-items/mail_truck.png" id="2_5f87l"]
+[ext_resource type="Script" uid="uid://d04mqaknujtmy" path="res://resources/upgrade_definitions/scripts/item_upgrade.gd" id="1_k5ygl"]
+[ext_resource type="Texture2D" uid="uid://emmaegp4x364" path="res://assets/shop-items/mail_truck.png" id="2_25dre"]
 
 [resource]
-script = ExtResource("1_5f87l")
+script = ExtResource("1_k5ygl")
 from_item_id = "pony_express"
 to_item_id = "mail_truck"
 id = "pony_express_to_mail_truck"
 display_name = "Upgrade Pony Expresses to Mail Trucks"
-cost = 0
+cost = 50000
 reveal_cost = 0
 is_available = false
 is_purchased = false
-texture = ExtResource("2_5f87l")
+texture = ExtResource("2_25dre")

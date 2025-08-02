@@ -1,16 +1,16 @@
 [gd_resource type="Resource" script_class="ItemUpgrade" load_steps=3 format=3 uid="uid://b7ikm0ky5eyhb"]
 
-[ext_resource type="Script" uid="uid://d04mqaknujtmy" path="res://resources/upgrade_definitions/scripts/item_upgrade.gd" id="1_a8ysv"]
-[ext_resource type="Texture2D" uid="uid://d36dockl8nmlx" path="res://assets/shop-items/runner.png" id="2_a8ysv"]
+[ext_resource type="Script" uid="uid://d04mqaknujtmy" path="res://resources/upgrade_definitions/scripts/item_upgrade.gd" id="1_o8ftf"]
+[ext_resource type="Texture2D" uid="uid://d36dockl8nmlx" path="res://assets/shop-items/runner.png" id="2_yv4ay"]
 
 [resource]
-script = ExtResource("1_a8ysv")
+script = ExtResource("1_o8ftf")
 from_item_id = "paper_boy"
 to_item_id = "runner"
 id = "paper_boy_to_runner"
 display_name = "Upgrade Paper Boys to Runners"
-cost = 0
+cost = 25000
 reveal_cost = 0
 is_available = false
 is_purchased = false
-texture = ExtResource("2_a8ysv")
+texture = ExtResource("2_yv4ay")

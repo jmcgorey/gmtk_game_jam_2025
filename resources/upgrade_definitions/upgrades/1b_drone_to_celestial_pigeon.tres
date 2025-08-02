@@ -1,16 +1,16 @@
 [gd_resource type="Resource" script_class="ItemUpgrade" load_steps=3 format=3 uid="uid://cj4axs1mvdsf0"]
 
-[ext_resource type="Script" uid="uid://d04mqaknujtmy" path="res://resources/upgrade_definitions/scripts/item_upgrade.gd" id="1_fo6md"]
-[ext_resource type="Texture2D" uid="uid://42di32onb82g" path="res://assets/shop-items/celestial_pigeon.png" id="2_fo6md"]
+[ext_resource type="Script" uid="uid://d04mqaknujtmy" path="res://resources/upgrade_definitions/scripts/item_upgrade.gd" id="1_xme1c"]
+[ext_resource type="Texture2D" uid="uid://42di32onb82g" path="res://assets/shop-items/celestial_pigeon.png" id="2_5eomk"]
 
 [resource]
-script = ExtResource("1_fo6md")
+script = ExtResource("1_xme1c")
 from_item_id = "drone"
 to_item_id = "celestial_pigeon"
 id = "drone_to_celestial_pigeon"
 display_name = "Upgrade Drones to Celestial Pigeons"
-cost = 0
+cost = 125000
 reveal_cost = 0
 is_available = false
 is_purchased = false
-texture = ExtResource("2_fo6md")
+texture = ExtResource("2_5eomk")

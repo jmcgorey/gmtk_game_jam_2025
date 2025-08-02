@@ -1,16 +1,16 @@
 [gd_resource type="Resource" script_class="ItemUpgrade" load_steps=3 format=3 uid="uid://ykfo8uqtjywe"]
 
-[ext_resource type="Script" uid="uid://d04mqaknujtmy" path="res://resources/upgrade_definitions/scripts/item_upgrade.gd" id="1_tjymq"]
-[ext_resource type="Texture2D" uid="uid://d2eayqbc4yq4h" path="res://assets/shop-items/mail_semi.png" id="2_tjymq"]
+[ext_resource type="Script" uid="uid://d04mqaknujtmy" path="res://resources/upgrade_definitions/scripts/item_upgrade.gd" id="1_eg7ei"]
+[ext_resource type="Texture2D" uid="uid://d2eayqbc4yq4h" path="res://assets/shop-items/mail_semi.png" id="2_n1mwc"]
 
 [resource]
-script = ExtResource("1_tjymq")
+script = ExtResource("1_eg7ei")
 from_item_id = "mail_truck"
 to_item_id = "mail_semi"
 id = "mail_truck_to_mail_semi"
 display_name = "Upgrade Mail Trucks to Mail Semis"
-cost = 0
+cost = 5000000
 reveal_cost = 0
 is_available = false
 is_purchased = false
-texture = ExtResource("2_tjymq")
+texture = ExtResource("2_n1mwc")

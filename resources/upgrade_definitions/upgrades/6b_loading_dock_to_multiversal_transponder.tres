@@ -1,16 +1,16 @@
 [gd_resource type="Resource" script_class="ItemUpgrade" load_steps=3 format=3 uid="uid://briv72l4ryw0t"]
 
-[ext_resource type="Script" uid="uid://d04mqaknujtmy" path="res://resources/upgrade_definitions/scripts/item_upgrade.gd" id="1_uvwbr"]
-[ext_resource type="Texture2D" uid="uid://d540pov78rcq" path="res://assets/shop-items/multiversal_transponder.png" id="2_uvwbr"]
+[ext_resource type="Script" uid="uid://d04mqaknujtmy" path="res://resources/upgrade_definitions/scripts/item_upgrade.gd" id="1_17wjm"]
+[ext_resource type="Texture2D" uid="uid://d540pov78rcq" path="res://assets/shop-items/multiversal_transponder.png" id="2_ceckb"]
 
 [resource]
-script = ExtResource("1_uvwbr")
+script = ExtResource("1_17wjm")
 from_item_id = "interdimensional_loading_dock"
 to_item_id = "multiversal_transponder"
 id = "loading_dock_to_multiversal_transponder"
 display_name = "Upgrade Interdimensional Loading Docks to Multiversal Transponders"
-cost = 0
+cost = 100000000000
 reveal_cost = 0
 is_available = false
 is_purchased = false
-texture = ExtResource("2_uvwbr")
+texture = ExtResource("2_ceckb")
