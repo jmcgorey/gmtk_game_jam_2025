@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://rxs4hcjjxjca"]
+[gd_scene load_steps=10 format=3 uid="uid://rxs4hcjjxjca"]
 
 [ext_resource type="Script" uid="uid://c8h8etkdy3fte" path="res://scenes/main/main.gd" id="1_iuonh"]
 [ext_resource type="PackedScene" uid="uid://bvwep6rm04033" path="res://scenes/managers/item_definition_provider.tscn" id="2_blune"]
@@ -6,18 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://b3bn14l43yjx0" path="res://scenes/trackers/shop_item_tracker.tscn" id="4_th5th"]
 [ext_resource type="PackedScene" uid="uid://bv3mis00dsbbc" path="res://scenes/ui/BoxButtonPanel.tscn" id="5_ow5a4"]
 [ext_resource type="PackedScene" uid="uid://bfmmpetriy0pt" path="res://scenes/shop.tscn" id="6_7smn1"]
-[ext_resource type="PackedScene" uid="uid://b1hhhl1o1n1ld" path="res://scenes/ui/cards/active_items_viewer.tscn" id="6_yyfjg"]
 [ext_resource type="PackedScene" uid="uid://dl8cychrcyc8i" path="res://scenes/ui/shipping_manifest.tscn" id="7_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://dd4geluil3yiq" path="res://scenes/trackers/active_item_tracker.tscn" id="10_7smn1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q06x"]
 bg_color = Color(0.589048, 0.323764, 0.0629477, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k2fmo"]
-bg_color = Color(0.664388, 0.026698, 0.208358, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ow5a4"]
-bg_color = Color(0.292218, 0.312838, 0.779751, 1)
 
 [node name="Main" type="CanvasLayer"]
 script = ExtResource("1_iuonh")
@@ -63,20 +56,10 @@ theme_override_constants/separation = 0
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/UpgradesColumn"]
-visible = false
+[node name="ShippingManifest" parent="MarginContainer/VBoxContainer/HBoxContainer/UpgradesColumn" node_paths=PackedStringArray("active_items_tracker") instance=ExtResource("7_b1x3f")]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_k2fmo")
-
-[node name="ActiveItemsViewer" parent="MarginContainer/VBoxContainer/HBoxContainer/UpgradesColumn/PanelContainer" node_paths=PackedStringArray("item_tracker") instance=ExtResource("6_yyfjg")]
-unique_name_in_owner = true
-layout_mode = 2
-item_tracker = NodePath("../../../../../../ActiveItemTracker")
-
-[node name="ShippingManifest" parent="MarginContainer/VBoxContainer/HBoxContainer/UpgradesColumn" instance=ExtResource("7_b1x3f")]
-layout_mode = 2
-size_flags_vertical = 3
+active_items_tracker = NodePath("../../../../../ActiveItemTracker")
 
 [node name="PackageColumn" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -98,12 +81,3 @@ active_item_tracker = NodePath("../../../../../ActiveItemTracker")
 item_definition_provider = NodePath("../../../../../ItemDefinitionProvider")
 shop_item_tracker = NodePath("../../../../../ShopItemTracker")
 score_manager = NodePath("../../../../../ScoreManager")
-
-[node name="BottomBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/BottomBar"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_ow5a4")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dl8cychrcyc8i"]
+[gd_scene load_steps=5 format=3 uid="uid://dl8cychrcyc8i"]
 
 [ext_resource type="Texture2D" uid="uid://buw1tospdtk0v" path="res://assets/clip_board.png" id="1_jx5oo"]
 [ext_resource type="Script" uid="uid://c45rhhy66620h" path="res://scenes/ui/shipping_manifest.gd" id="2_khb40"]
+[ext_resource type="PackedScene" uid="uid://dmedxutixwvoj" path="res://scenes/ui/cards/active_item_line_item.tscn" id="3_dl5n7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_khb40"]
 texture = ExtResource("1_jx5oo")
@@ -16,6 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_khb40")
 script = ExtResource("2_khb40")
+card_scene = ExtResource("3_dl5n7")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -92,3 +94,4 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 24
