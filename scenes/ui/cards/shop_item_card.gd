@@ -8,13 +8,14 @@ class_name ShopItemCard extends MarginContainer
 @onready var item_texture: TextureRect = %ItemTexture
 @onready var count_label: Label = %CountLabel
 
-var stored_id
+var stored_item: ShopItemTracker.ShopItem
 signal item_button_pressed(item_id)
 
 ## TODO: Check if disabled or not - probably need to move score update into global sig
 
 func _ready():
 	item_button.pressed.connect(on_item_button_pressed)
+	GameEvents.package_count_changed.connect(on_package_count_changed)
 
 # Called when the node enters the scene tree for the first time.
 func set_properties(item: ShopItemTracker.ShopItem) -> void:
@@ -22,8 +23,15 @@ func set_properties(item: ShopItemTracker.ShopItem) -> void:
 	name_label.text = item.display_name
 	count_label.text = 'x' + str(item.count)
 	cost_label.text = str(item.cost)
-	stored_id = item.id
+	stored_item = item
 	
 
 func on_item_button_pressed():
-	item_button_pressed.emit(stored_id)
+	item_button_pressed.emit(stored_item.id)
+
+func on_package_count_changed(pkg_count: float, _avg_pkgs: float):
+	if pkg_count < stored_item.cost:
+		item_button.disabled = true
+	else:
+		item_button.disabled = false
+	

@@ -25,11 +25,12 @@ horizontal_alignment = 1
 
 [node name="PackageButton" type="TextureButton" parent="VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 action_mode = 0
 texture_normal = ExtResource("2_mf0jo")
-stretch_mode = 3
+stretch_mode = 0
 
 [node name="AvgCountLabel" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true

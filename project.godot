@@ -21,7 +21,7 @@ buses/default_bus_layout="res://resources/audio_busses/default_bus_layout.tres"
 
 [autoload]
 
-GlobalEvents="*res://scenes/globals/global_events.gd"
+GameEvents="*res://scenes/globals/game_events.gd"
 
 [display]
 

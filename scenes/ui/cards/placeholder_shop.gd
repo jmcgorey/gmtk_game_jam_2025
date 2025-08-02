@@ -30,7 +30,6 @@ func add_button(text: String) -> Button:
 
 func on_button_click(item: ProgressionItem):
 	item.quantity += 1
-	GlobalEvents.emit_progression_item_changed(item)
 	
 	var active_item: ActiveItemTracker.ActiveItem = ActiveItemTracker.ActiveItem.new()
 	active_item.id = item.id

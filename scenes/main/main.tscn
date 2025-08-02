@@ -90,12 +90,13 @@ score_manager = NodePath("../../../../../ScoreManager")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Shop" parent="MarginContainer/VBoxContainer/HBoxContainer/StoreColumn" node_paths=PackedStringArray("active_item_tracker", "item_definition_provider", "shop_item_tracker") instance=ExtResource("6_7smn1")]
+[node name="Shop" parent="MarginContainer/VBoxContainer/HBoxContainer/StoreColumn" node_paths=PackedStringArray("active_item_tracker", "item_definition_provider", "shop_item_tracker", "score_manager") instance=ExtResource("6_7smn1")]
 layout_mode = 2
 size_flags_vertical = 3
 active_item_tracker = NodePath("../../../../../ActiveItemTracker")
 item_definition_provider = NodePath("../../../../../ItemDefinitionProvider")
 shop_item_tracker = NodePath("../../../../../ShopItemTracker")
+score_manager = NodePath("../../../../../ScoreManager")
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/StoreColumn"]
 visible = false
