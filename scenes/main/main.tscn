@@ -1,26 +1,19 @@
-[gd_scene load_steps=17 format=3 uid="uid://rxs4hcjjxjca"]
+[gd_scene load_steps=12 format=3 uid="uid://rxs4hcjjxjca"]
 
 [ext_resource type="Script" uid="uid://c8h8etkdy3fte" path="res://scenes/main/main.gd" id="1_iuonh"]
-[ext_resource type="Resource" uid="uid://conwcl746x7q1" path="res://resources/progression_items/pi_carrier_pigeon.tres" id="2_6q06x"]
 [ext_resource type="PackedScene" uid="uid://bvwep6rm04033" path="res://scenes/managers/item_definition_provider.tscn" id="2_blune"]
 [ext_resource type="PackedScene" uid="uid://b5mghruy3a4c2" path="res://scenes/managers/score_manager.tscn" id="2_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://b3bn14l43yjx0" path="res://scenes/trackers/shop_item_tracker.tscn" id="4_th5th"]
-[ext_resource type="Script" uid="uid://c35d1xgqw6imc" path="res://resources/progression_items/progression_item.gd" id="5_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://bv3mis00dsbbc" path="res://scenes/ui/BoxButtonPanel.tscn" id="5_ow5a4"]
 [ext_resource type="PackedScene" uid="uid://bfmmpetriy0pt" path="res://scenes/shop.tscn" id="6_7smn1"]
-[ext_resource type="Resource" uid="uid://dunn5upgeq07l" path="res://resources/progression_items/pi_paper_boy.tres" id="6_hujxm"]
 [ext_resource type="PackedScene" uid="uid://b1hhhl1o1n1ld" path="res://scenes/ui/cards/active_items_viewer.tscn" id="6_yyfjg"]
 [ext_resource type="PackedScene" uid="uid://dd4geluil3yiq" path="res://scenes/trackers/active_item_tracker.tscn" id="10_7smn1"]
-[ext_resource type="PackedScene" uid="uid://bv0ylvisgnuor" path="res://scenes/ui/cards/placeholder_shop.tscn" id="12_blune"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q06x"]
 bg_color = Color(0.589048, 0.323764, 0.0629477, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k2fmo"]
 bg_color = Color(0.664388, 0.026698, 0.208358, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3cfh"]
-bg_color = Color(0.0532924, 0.42644, 0.126935, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ow5a4"]
 bg_color = Color(0.292218, 0.312838, 0.779751, 1)
@@ -97,17 +90,6 @@ active_item_tracker = NodePath("../../../../../ActiveItemTracker")
 item_definition_provider = NodePath("../../../../../ItemDefinitionProvider")
 shop_item_tracker = NodePath("../../../../../ShopItemTracker")
 score_manager = NodePath("../../../../../ScoreManager")
-
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/StoreColumn"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_l3cfh")
-
-[node name="PlaceholderShop" parent="MarginContainer/VBoxContainer/HBoxContainer/StoreColumn/PanelContainer" node_paths=PackedStringArray("active_item_tracker") instance=ExtResource("12_blune")]
-layout_mode = 2
-progression_items = Array[ExtResource("5_b1x3f")]([ExtResource("2_6q06x"), ExtResource("6_hujxm")])
-active_item_tracker = NodePath("../../../../../../ActiveItemTracker")
 
 [node name="BottomBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
