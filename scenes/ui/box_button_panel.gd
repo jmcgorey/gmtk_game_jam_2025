@@ -19,5 +19,5 @@ func on_package_button_clicked() -> void:
 
 ## Runs when the package count updates
 func on_package_count_changed(new_count: float, avg_score_per_sec: float) -> void:
-	package_count_label.text = str(floori(new_count))
-	avg_count_label.text = str(floori(avg_score_per_sec)) + ' / sec' 
+	package_count_label.text = NumberFormatter.get_pretty_string(new_count)
+	avg_count_label.text = NumberFormatter.get_pretty_string(avg_score_per_sec) + ' / sec' 

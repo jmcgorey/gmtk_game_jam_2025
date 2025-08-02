@@ -1,6 +1,7 @@
 class_name ItemDefinition extends Resource
 
 var base_background_texture = preload('res://assets/active-items/panel-template.png')
+var base_shop_texture = preload('res://assets/shop-items/shop_placeholder.png')
 
 ## The internal ID for the item
 @export var id: String
@@ -38,6 +39,11 @@ var base_background_texture = preload('res://assets/active-items/panel-template.
 func get_cost(num_purchased: int) -> int:
 	return int(base_cost + ((base_cost * cost_scaler) * num_purchased))
 
+## Returns the icon texture for the shop item card
+func get_shop_texture() -> Texture2D:
+	if shop_texture == null:
+		return base_shop_texture
+	return shop_texture
 
 ## Returns the desired background image for the active item card 
 func get_background_image(_num_purchased = 0) -> Texture2D:

@@ -22,6 +22,7 @@ buses/default_bus_layout="res://resources/audio_busses/default_bus_layout.tres"
 [autoload]
 
 ScoreState="*res://scenes/globals/score_state.gd"
+NumberFormatter="*res://scenes/globals/number_formatter.gd"
 
 [display]
 

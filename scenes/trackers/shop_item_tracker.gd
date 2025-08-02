@@ -14,7 +14,7 @@ class ShopItem extends BaseItemTracker.BaseItem:
 		var item = ShopItem.new()
 		item.id = definition.id
 		item.display_name = definition.display_name
-		item.texture = definition.shop_texture
+		item.texture = definition.get_shop_texture()
 		item.count = _count
 		item.cost = definition.get_cost(_count)
 		

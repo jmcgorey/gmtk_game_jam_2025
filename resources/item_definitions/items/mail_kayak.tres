@@ -6,12 +6,12 @@
 [resource]
 script = ExtResource("2_t8d1x")
 id = "mail_kayak"
-display_name = "Mail Kayak"
+display_name = "Kayak"
 items_per_second = 20
-store_slot = 2
-base_cost = 1000
-reveal_cost = 500
-cost_scaler = 0.5
+store_slot = 3
+base_cost = 200
+reveal_cost = 0
+cost_scaler = 0.25
 available_at_start = true
 shop_texture = ExtResource("2_b23la")
 active_item_backgrounds = Array[Texture2D]([])

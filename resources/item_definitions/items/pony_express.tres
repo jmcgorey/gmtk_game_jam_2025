@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemDefinition" load_steps=3 format=3 uid="uid://dvtogtnlic48s"]
+
+[ext_resource type="Script" uid="uid://brdiwydichfu3" path="res://resources/item_definitions/scripts/item_definition.gd" id="1_5djl6"]
+[ext_resource type="Texture2D" uid="uid://c38fss8ma64nl" path="res://assets/shop-items/pony_express.png" id="2_5djl6"]
+
+[resource]
+script = ExtResource("1_5djl6")
+id = "pony_express"
+display_name = "Pony Express"
+items_per_second = 10
+store_slot = 2
+base_cost = 100
+reveal_cost = 0
+cost_scaler = 0.25
+available_at_start = true
+shop_texture = ExtResource("2_5djl6")
+active_item_backgrounds = Array[Texture2D]([])

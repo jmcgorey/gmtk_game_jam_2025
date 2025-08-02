@@ -20,7 +20,7 @@ func set_properties(item: ShopItemTracker.ShopItem) -> void:
 	item_texture.texture = item.texture
 	name_label.text = item.display_name
 	count_label.text = 'x' + str(item.count)
-	cost_label.text = str(item.cost)
+	cost_label.text = NumberFormatter.get_pretty_string(item.cost)
 	stored_item = item
 	
 	set_enabled(ScoreState.package_count)

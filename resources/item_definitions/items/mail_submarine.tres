@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemDefinition" load_steps=2 format=3 uid="uid://c0fvuv245jpip"]
+
+[ext_resource type="Script" uid="uid://brdiwydichfu3" path="res://resources/item_definitions/scripts/item_definition.gd" id="1_0qdl4"]
+
+[resource]
+script = ExtResource("1_0qdl4")
+id = "mail_submarine"
+display_name = "Submarine"
+items_per_second = 2000
+store_slot = 3
+base_cost = 20000
+reveal_cost = 0
+cost_scaler = 0.25
+available_at_start = false
+active_item_backgrounds = Array[Texture2D]([])

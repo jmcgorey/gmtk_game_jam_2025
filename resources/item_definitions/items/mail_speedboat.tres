@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemDefinition" load_steps=2 format=3 uid="uid://2prncdqpmhgh"]
+
+[ext_resource type="Script" uid="uid://brdiwydichfu3" path="res://resources/item_definitions/scripts/item_definition.gd" id="1_m4d5p"]
+
+[resource]
+script = ExtResource("1_m4d5p")
+id = "mail_speedboat"
+display_name = "Speedboat"
+items_per_second = 200
+store_slot = 3
+base_cost = 2000
+reveal_cost = 0
+cost_scaler = 0.25
+available_at_start = false
+active_item_backgrounds = Array[Texture2D]([])
