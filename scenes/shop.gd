@@ -5,7 +5,7 @@ extends Node
 @export var shop_item_tracker: ShopItemTracker
 @export var score_manager: ScoreManager
 
-@onready var shop_items_viewer: VBoxContainer = $ShopItemsViewer
+@onready var shop_items_viewer: VBoxContainer = %ShopItemsViewer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

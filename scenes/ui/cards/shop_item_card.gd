@@ -11,8 +11,6 @@ class_name ShopItemCard extends MarginContainer
 var stored_item: ShopItemTracker.ShopItem
 signal item_button_pressed(item_id)
 
-## TODO: Check if disabled or not - probably need to move score update into global sig
-
 func _ready():
 	item_button.pressed.connect(on_item_button_pressed)
 	ScoreState.package_count_changed.connect(on_package_count_changed)
@@ -28,6 +26,8 @@ func set_properties(item: ShopItemTracker.ShopItem) -> void:
 	set_enabled(ScoreState.package_count)
 
 
+# Sets the shop item card to be enabled/disabled based on if we have enough
+# score to pay for it
 func set_enabled(score: float):
 	if score < stored_item.cost:
 		item_button.disabled = true

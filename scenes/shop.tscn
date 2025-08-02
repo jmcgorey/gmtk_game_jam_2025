@@ -6,5 +6,14 @@
 [node name="Shop" type="PanelContainer"]
 script = ExtResource("1_rgcs7")
 
-[node name="ShopItemsViewer" parent="." instance=ExtResource("2_xfvoa")]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "-- Shop --"
+horizontal_alignment = 1
+
+[node name="ShopItemsViewer" parent="VBoxContainer" instance=ExtResource("2_xfvoa")]
+unique_name_in_owner = true
 layout_mode = 2

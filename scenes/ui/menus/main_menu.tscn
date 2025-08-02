@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://fler8kjor8uy"]
 
 [ext_resource type="Script" uid="uid://dktba3jklhm33" path="res://scenes/ui/menus/main_menu.gd" id="1_h1kbi"]
-[ext_resource type="Texture2D" uid="uid://4nv0jbhutjnm" path="res://icon.svg" id="2_whicr"]
+[ext_resource type="Texture2D" uid="uid://bb0mf72uwfgpg" path="res://assets/package.png" id="2_h1kbi"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_h1kbi")
@@ -41,7 +41,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "A Longer Game Title"
+text = "Package Pusher"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -82,6 +82,13 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/RightSideContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/RightSideContainer/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("2_whicr")
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/RightSideContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_h1kbi")
+stretch_mode = 4
