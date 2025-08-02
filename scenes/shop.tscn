@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfmmpetriy0pt"]
+
+[ext_resource type="Script" uid="uid://x5q4r7k7twg3" path="res://scenes/shop.gd" id="1_rgcs7"]
+[ext_resource type="PackedScene" uid="uid://ctt4ttb1qirxn" path="res://scenes/ui/cards/shop_items_viewer.tscn" id="2_xfvoa"]
+
+[node name="Shop" type="PanelContainer"]
+script = ExtResource("1_rgcs7")
+
+[node name="ShopItemsViewer" parent="." instance=ExtResource("2_xfvoa")]
+layout_mode = 2

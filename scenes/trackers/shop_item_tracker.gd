@@ -9,6 +9,17 @@ class ShopItem extends BaseItemTracker.BaseItem:
 	## The texture to use to display the item in the shop
 	var texture: Texture2D
 	
+	## Creates a ShopItem from an ItemDefinition
+	static func from_definition(definition: ItemDefinition, _count: int) -> ShopItem:
+		var item = ShopItem.new()
+		item.id = definition.id
+		item.display_name = definition.display_name
+		item.texture = definition.shop_texture
+		item.count = _count
+		item.cost = definition.get_cost(_count)
+		
+		return item
+	
 	func debug() -> String:
 		return display_name + '[' + id + ']: ' + 'count=' + str(count) + ', cost=' + str(cost)
 

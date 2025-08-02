@@ -83,3 +83,7 @@ func _get_index(item_id: String) -> int:
 ## [Private] Sorting method used to match item to its id 
 func _find_by_id(item, item_id: String) -> bool:
 	return item != null && item.id == item_id
+
+func debug_list():
+	for item in _item_cache:
+		print('- ' + item.debug())

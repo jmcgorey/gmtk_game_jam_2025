@@ -39,7 +39,6 @@ func _tick_score():
 	
 	# Calculate the avg score per second
 	avg_score_per_second = (float(sum) + float(_last_score)) / 2
-	print('Avg score: ', avg_score_per_second)
 	_last_score = sum
 	
 	# Increment the counter

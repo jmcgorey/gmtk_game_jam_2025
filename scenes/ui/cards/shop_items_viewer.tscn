@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctt4ttb1qirxn"]
+
+[ext_resource type="Script" uid="uid://djjc1avr73myu" path="res://scenes/ui/cards/shop_items_viewer.gd" id="1_8cuye"]
+[ext_resource type="PackedScene" uid="uid://bs3ojqwei3msw" path="res://scenes/ui/cards/shop_item_card.tscn" id="2_rhaix"]
+
+[node name="ShopItemsViewer" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_8cuye")
+card_scene = ExtResource("2_rhaix")

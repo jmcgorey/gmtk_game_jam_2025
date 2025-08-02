@@ -1,15 +1,18 @@
-[gd_resource type="Resource" script_class="ItemDefinition" load_steps=3 format=3 uid="uid://cix3lcpo4mkp1"]
+[gd_resource type="Resource" script_class="ItemDefinition" load_steps=4 format=3 uid="uid://cix3lcpo4mkp1"]
 
 [ext_resource type="Texture2D" uid="uid://dkwbgsr52sobk" path="res://assets/active-items/paper_boy_1.png" id="1_f34ve"]
 [ext_resource type="Script" uid="uid://brdiwydichfu3" path="res://resources/item_definitions/scripts/item_definition.gd" id="2_3ds42"]
+[ext_resource type="Texture2D" uid="uid://ct362kexc676l" path="res://assets/shop-items/paper_boy.png" id="3_ylkp3"]
 
 [resource]
 script = ExtResource("2_3ds42")
 id = "paper_boy"
 display_name = "Paper Boy"
 items_per_second = 5
+store_slot = 1
 base_cost = 100
 reveal_cost = 50
 cost_scaler = 0.25
 available_at_start = true
+shop_texture = ExtResource("3_ylkp3")
 active_item_backgrounds = Array[Texture2D]([ExtResource("1_f34ve")])

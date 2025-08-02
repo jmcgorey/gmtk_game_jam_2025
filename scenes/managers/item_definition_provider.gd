@@ -2,7 +2,7 @@ class_name ItemDefinitionProvider extends Node
 
 
 var item_definition_path
-var item_definitions: Array[ItemDefinition] = []
+var item_definitions: Dictionary[String, ItemDefinition] = {}
 
 signal definitions_loaded
 
@@ -16,6 +16,18 @@ func load_item_definitions():
 	for path in resource_paths:
 		var resource_path = item_definition_path + '/' + path
 		var item_definition: ItemDefinition = ResourceLoader.load(resource_path, 'ItemDefinition')
-		item_definitions.push_back(item_definition)
+		item_definitions.set(item_definition.id, item_definition)
+		print('Loaded item: ' + item_definition.debug())
 	
 	definitions_loaded.emit()
+
+
+func get_definition(item_id: String) -> ItemDefinition:
+	return item_definitions.get(item_id)
+
+
+func get_all_definitions() -> Dictionary[String, ItemDefinition]:
+	if item_definitions.is_empty():
+		load_item_definitions()
+	
+	return item_definitions

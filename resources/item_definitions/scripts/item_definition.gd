@@ -11,6 +11,9 @@ var base_background_texture = preload('res://assets/active-items/panel-template.
 ## The number of packages this item produces per second
 @export var items_per_second: int
 
+## The slot the item should occupy in the store
+@export var store_slot: int
+
 ## The cost of purchasing the item for the first time
 @export var base_cost: int
 
