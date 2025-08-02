@@ -14,4 +14,3 @@ reveal_cost = 0
 cost_scaler = 0.25
 available_at_start = true
 shop_texture = ExtResource("2_qu2bo")
-active_item_backgrounds = Array[Texture2D]([])

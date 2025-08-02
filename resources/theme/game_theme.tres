@@ -1,9 +1,6 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bsajj4734cps1"]
-
-[ext_resource type="StyleBox" uid="uid://bgtvxxge173v" path="res://resources/theme/progression_item_container_stylebox.tres" id="1_gwmee"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bsajj4734cps1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwmee"]
 
 [resource]
 Button/styles/disabled = SubResource("StyleBoxFlat_gwmee")
-ProgressionItemContainer/styles/panel = ExtResource("1_gwmee")

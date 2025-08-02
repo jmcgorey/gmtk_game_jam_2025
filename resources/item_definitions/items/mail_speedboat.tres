@@ -12,4 +12,3 @@ base_cost = 2000
 reveal_cost = 0
 cost_scaler = 0.25
 available_at_start = false
-active_item_backgrounds = Array[Texture2D]([])

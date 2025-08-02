@@ -1,6 +1,5 @@
 class_name ItemDefinition extends Resource
 
-var base_background_texture = preload('res://assets/active-items/panel-template.png')
 var base_shop_texture = preload('res://assets/shop-items/shop_placeholder.png')
 
 ## The internal ID for the item
@@ -30,11 +29,6 @@ var base_shop_texture = preload('res://assets/shop-items/shop_placeholder.png')
 ## The texture to display for the item in the shop
 @export var shop_texture: Texture2D
 
-## A list of textures to display for the item in the active items list.
-## Defaults to just listing the first one unless custom `get_background_image`
-## logic is provided
-@export var active_item_backgrounds: Array[Texture2D]
-
 ## Returns the cost of the item after n purchases
 func get_cost(num_purchased: int) -> int:
 	return int(base_cost + ((base_cost * cost_scaler) * num_purchased))
@@ -44,13 +38,6 @@ func get_shop_texture() -> Texture2D:
 	if shop_texture == null:
 		return base_shop_texture
 	return shop_texture
-
-## Returns the desired background image for the active item card 
-func get_background_image(_num_purchased = 0) -> Texture2D:
-	if active_item_backgrounds != null && !active_item_backgrounds.is_empty():
-		return active_item_backgrounds[0]
-	
-	return base_background_texture
 
 
 func debug() -> String:
