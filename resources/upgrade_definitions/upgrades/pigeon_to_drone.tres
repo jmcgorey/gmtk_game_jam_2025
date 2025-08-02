@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemUpgrade" load_steps=3 format=3 uid="uid://d82n3aeed5fm"]
+
+[ext_resource type="Script" uid="uid://d04mqaknujtmy" path="res://resources/upgrade_definitions/scripts/item_upgrade.gd" id="1_slw8l"]
+[ext_resource type="Texture2D" uid="uid://dmco8nggalons" path="res://assets/shop-items/drone.png" id="2_ilatp"]
+
+[resource]
+script = ExtResource("1_slw8l")
+from_item_id = "carrier_pigeon"
+to_item_id = "drone"
+id = "pigeon_to_drone"
+display_name = "Upgrade Carrier Pigeons to Drones"
+cost = 0
+reveal_cost = 0
+is_available = false
+is_purchased = false
+texture = ExtResource("2_ilatp")

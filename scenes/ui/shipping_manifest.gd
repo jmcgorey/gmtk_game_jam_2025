@@ -13,6 +13,7 @@ var card_tracker: Dictionary[String, ActiveItemLineItem] = {}
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ScoreState.package_count_changed.connect(on_score_changed)
+	active_items_tracker.item_replaced.connect(on_item_replaced)
 	active_items_tracker.items_changed.connect(on_items_changed)
 
 
@@ -41,6 +42,12 @@ func on_score_changed(_cur_score: float, all_time_score: float, score_per_sec: f
 	all_time_value.text = NumberFormatter.get_pretty_string(all_time_score)
 	per_second_value.text = NumberFormatter.get_pretty_string(score_per_sec) + ' / sec'
 
+
+func on_item_replaced(old_item_id: String, _new_item_id: String):
+	# Free the old card
+	var card_instance = card_tracker.get(old_item_id)
+	if card_instance != null && is_instance_valid(card_instance):
+		card_instance.queue_free()
 
 # Updates the item view whenever the list of active items changes 
 func on_items_changed():

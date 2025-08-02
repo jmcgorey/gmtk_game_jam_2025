@@ -1,19 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfmmpetriy0pt"]
+[gd_scene load_steps=5 format=3 uid="uid://bfmmpetriy0pt"]
 
 [ext_resource type="Script" uid="uid://x5q4r7k7twg3" path="res://scenes/shop.gd" id="1_rgcs7"]
+[ext_resource type="PackedScene" uid="uid://bfovo2yyd3dlm" path="res://scenes/trackers/shop_upgrade_tracker.tscn" id="2_032fp"]
 [ext_resource type="PackedScene" uid="uid://ctt4ttb1qirxn" path="res://scenes/ui/cards/shop_items_viewer.tscn" id="2_xfvoa"]
+[ext_resource type="PackedScene" uid="uid://brmkvp6xi2tni" path="res://scenes/ui/cards/shop_upgrades_viewer.tscn" id="3_1l46r"]
 
 [node name="Shop" type="PanelContainer"]
 script = ExtResource("1_rgcs7")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="ShopUpgradeTracker" parent="." instance=ExtResource("2_032fp")]
+unique_name_in_owner = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "-- Shop --"
 horizontal_alignment = 1
 
-[node name="ShopItemsViewer" parent="VBoxContainer" instance=ExtResource("2_xfvoa")]
+[node name="ShopItemsViewer" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_xfvoa")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "-- Upgrades --"
+horizontal_alignment = 1
+
+[node name="ShopUpgradesViewer" parent="ScrollContainer/VBoxContainer" instance=ExtResource("3_1l46r")]
 unique_name_in_owner = true
 layout_mode = 2

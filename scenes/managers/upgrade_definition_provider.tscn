@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://pfnx1l3swh53"]
+
+[ext_resource type="Script" uid="uid://dnjbu1mb2btx3" path="res://scenes/managers/upgrade_definition_provider.gd" id="1_k8i4j"]
+
+[node name="UpgradeDefinitionProvider" type="Node"]
+script = ExtResource("1_k8i4j")

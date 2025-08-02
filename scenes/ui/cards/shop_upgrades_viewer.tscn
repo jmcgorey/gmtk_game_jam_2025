@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://brmkvp6xi2tni"]
+
+[ext_resource type="Script" uid="uid://c2ior7qkm0rh3" path="res://scenes/ui/cards/shop_upgrades_viewer.gd" id="1_a7xy3"]
+[ext_resource type="PackedScene" uid="uid://3dvd3sgm66t7" path="res://scenes/ui/cards/shop_upgrade_card.tscn" id="2_p10kd"]
+
+[node name="ShopUpgradesViewer" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_a7xy3")
+card_scene = ExtResource("2_p10kd")

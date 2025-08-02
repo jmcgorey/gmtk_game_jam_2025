@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfovo2yyd3dlm"]
+
+[ext_resource type="Script" uid="uid://bls4xpwb3vm4v" path="res://scenes/trackers/shop_upgrade_tracker.gd" id="1_faddw"]
+
+[node name="ShopUpgradeTracker" type="Node"]
+script = ExtResource("1_faddw")

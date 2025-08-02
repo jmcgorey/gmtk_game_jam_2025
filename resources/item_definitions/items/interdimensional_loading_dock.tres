@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemDefinition" load_steps=3 format=3 uid="uid://bv6xvgq7b5iw7"]
+
+[ext_resource type="Script" uid="uid://brdiwydichfu3" path="res://resources/item_definitions/scripts/item_definition.gd" id="1_or6gd"]
+[ext_resource type="Texture2D" uid="uid://btmxaepev8kg8" path="res://assets/shop-items/interdimensional_loading_dock.png" id="2_iv6vj"]
+
+[resource]
+script = ExtResource("1_or6gd")
+id = "interdimensional_loading_dock"
+display_name = "Interdimensional Loading Dock"
+items_per_second = 10000000
+store_slot = 5
+base_cost = 100000000
+reveal_cost = 0
+cost_scaler = 0.25
+available_at_start = false
+shop_texture = ExtResource("2_iv6vj")

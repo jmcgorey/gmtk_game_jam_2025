@@ -13,6 +13,8 @@ class BaseItem extends Resource:
 signal item_added(item_id: String)
 ## Fired when an item is replaced in the list
 signal item_replaced(old_item_id: String, new_item_id: String)
+## Fired when an item is removed from the list
+signal item_removed(removed_item_id: String)
 ## Fired when any change occurs in the cache
 signal items_changed()
 
@@ -54,6 +56,14 @@ func replace_item(item_to_replace_id: String, new_item) -> void:
 		item_replaced.emit(item_to_replace_id, new_item.id)
 		items_changed.emit()
 
+
+## Removes the item with the given id from the cache
+func remove_item(item_id: String) -> void:
+	var index = _get_index(item_id)
+	if index != -1:
+		_item_cache.remove_at(index)
+		item_removed.emit(item_id)
+		items_changed.emit()
 
 # Returns true if the target item exists in the cache
 func has(item_id: String) -> bool:

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://rxs4hcjjxjca"]
+[gd_scene load_steps=11 format=3 uid="uid://rxs4hcjjxjca"]
 
 [ext_resource type="Script" uid="uid://c8h8etkdy3fte" path="res://scenes/main/main.gd" id="1_iuonh"]
 [ext_resource type="PackedScene" uid="uid://bvwep6rm04033" path="res://scenes/managers/item_definition_provider.tscn" id="2_blune"]
 [ext_resource type="PackedScene" uid="uid://b5mghruy3a4c2" path="res://scenes/managers/score_manager.tscn" id="2_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://pfnx1l3swh53" path="res://scenes/managers/upgrade_definition_provider.tscn" id="3_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://b3bn14l43yjx0" path="res://scenes/trackers/shop_item_tracker.tscn" id="4_th5th"]
 [ext_resource type="PackedScene" uid="uid://bv3mis00dsbbc" path="res://scenes/ui/BoxButtonPanel.tscn" id="5_ow5a4"]
 [ext_resource type="PackedScene" uid="uid://bfmmpetriy0pt" path="res://scenes/shop.tscn" id="6_7smn1"]
@@ -16,6 +17,8 @@ bg_color = Color(0.589048, 0.323764, 0.0629477, 1)
 script = ExtResource("1_iuonh")
 
 [node name="ItemDefinitionProvider" parent="." instance=ExtResource("2_blune")]
+
+[node name="UpgradeDefinitionProvider" parent="." instance=ExtResource("3_b1x3f")]
 
 [node name="ActiveItemTracker" parent="." instance=ExtResource("10_7smn1")]
 
@@ -52,21 +55,21 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="UpgradesColumn" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ManifestColumn" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ShippingManifest" parent="MarginContainer/VBoxContainer/HBoxContainer/UpgradesColumn" node_paths=PackedStringArray("active_items_tracker") instance=ExtResource("7_b1x3f")]
+[node name="ShippingManifest" parent="MarginContainer/VBoxContainer/HBoxContainer/ManifestColumn" node_paths=PackedStringArray("active_items_tracker") instance=ExtResource("7_b1x3f")]
 layout_mode = 2
 size_flags_vertical = 3
 active_items_tracker = NodePath("../../../../../ActiveItemTracker")
 
-[node name="PackageColumn" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ClickerColumn" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="BoxButtonPanel" parent="MarginContainer/VBoxContainer/HBoxContainer/PackageColumn" node_paths=PackedStringArray("score_manager") instance=ExtResource("5_ow5a4")]
+[node name="BoxButtonPanel" parent="MarginContainer/VBoxContainer/HBoxContainer/ClickerColumn" node_paths=PackedStringArray("score_manager") instance=ExtResource("5_ow5a4")]
 layout_mode = 2
 score_manager = NodePath("../../../../../ScoreManager")
 
@@ -74,10 +77,11 @@ score_manager = NodePath("../../../../../ScoreManager")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Shop" parent="MarginContainer/VBoxContainer/HBoxContainer/StoreColumn" node_paths=PackedStringArray("active_item_tracker", "item_definition_provider", "shop_item_tracker", "score_manager") instance=ExtResource("6_7smn1")]
+[node name="Shop" parent="MarginContainer/VBoxContainer/HBoxContainer/StoreColumn" node_paths=PackedStringArray("active_item_tracker", "item_definition_provider", "upgrade_definition_provider", "shop_item_tracker", "score_manager") instance=ExtResource("6_7smn1")]
 layout_mode = 2
 size_flags_vertical = 3
 active_item_tracker = NodePath("../../../../../ActiveItemTracker")
 item_definition_provider = NodePath("../../../../../ItemDefinitionProvider")
+upgrade_definition_provider = NodePath("../../../../../UpgradeDefinitionProvider")
 shop_item_tracker = NodePath("../../../../../ShopItemTracker")
 score_manager = NodePath("../../../../../ScoreManager")
