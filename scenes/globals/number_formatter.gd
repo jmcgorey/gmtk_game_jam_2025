@@ -19,13 +19,13 @@ func get_pretty_string(num: float) -> String:
 		var thousands = int(num / 1000)
 		var hundreds = posmod(num, 1000)
 		
-		var str = ''
+		var formatted_str = ''
 		if thousands > 0:
-			str += str(thousands) + ','
+			formatted_str += str(thousands) + ','
 		
-		str += str(hundreds).pad_zeros(3)
+		formatted_str += str(hundreds).pad_zeros(3)
 		
-		return str
+		return formatted_str
 	
 	# Otherwise represent it with 3 decimal places and a word
 	var base
