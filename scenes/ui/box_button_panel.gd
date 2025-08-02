@@ -9,7 +9,7 @@ extends Node
 
 func _ready() -> void:
 	package_button.pressed.connect(on_package_button_clicked)
-	GameEvents.package_count_changed.connect(on_package_count_changed)
+	ScoreState.package_count_changed.connect(on_package_count_changed)
 
 
 ## Runs when the package icon is clicked

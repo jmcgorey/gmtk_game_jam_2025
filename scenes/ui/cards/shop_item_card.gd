@@ -15,7 +15,7 @@ signal item_button_pressed(item_id)
 
 func _ready():
 	item_button.pressed.connect(on_item_button_pressed)
-	GameEvents.package_count_changed.connect(on_package_count_changed)
+	ScoreState.package_count_changed.connect(on_package_count_changed)
 
 # Called when the node enters the scene tree for the first time.
 func set_properties(item: ShopItemTracker.ShopItem) -> void:
@@ -25,13 +25,18 @@ func set_properties(item: ShopItemTracker.ShopItem) -> void:
 	cost_label.text = str(item.cost)
 	stored_item = item
 	
+	set_enabled(ScoreState.package_count)
+
+
+func set_enabled(score: float):
+	if score < stored_item.cost:
+		item_button.disabled = true
+	else:
+		item_button.disabled = false
+	
 
 func on_item_button_pressed():
 	item_button_pressed.emit(stored_item.id)
 
 func on_package_count_changed(pkg_count: float, _avg_pkgs: float):
-	if pkg_count < stored_item.cost:
-		item_button.disabled = true
-	else:
-		item_button.disabled = false
-	
+	set_enabled(pkg_count)
