@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl8cychrcyc8i"]
+
+[ext_resource type="Texture2D" uid="uid://buw1tospdtk0v" path="res://assets/clip_board.png" id="1_jx5oo"]
+[ext_resource type="Script" uid="uid://c45rhhy66620h" path="res://scenes/ui/shipping_manifest.gd" id="2_khb40"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_khb40"]
+texture = ExtResource("1_jx5oo")
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="ShippingManifest" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -854.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_khb40")
+script = ExtResource("2_khb40")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 116
+theme_override_constants/margin_right = 76
+theme_override_constants/margin_bottom = 72
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Shipping Manifest"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="AllTimeLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "All Time Packages Delivered: "
+autowrap_mode = 2
+
+[node name="AllTimeValue" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "0"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="PerSecondLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Package Delivery Rate: "
+autowrap_mode = 2
+
+[node name="PerSecondValue" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "0 / sec"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="DeliveryMethodsHeader" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "-- Delivery Methods --"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DeliveryMethodsContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
