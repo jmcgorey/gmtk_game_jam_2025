@@ -8,6 +8,7 @@ script = ExtResource("1_udjl1")
 
 [node name="ItemNameLabel" type="Label" parent="."]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
@@ -22,8 +23,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
-text = ".................."
-text_overrun_behavior = 3
+text = "......................................................."
+text_overrun_behavior = 1
 
 [node name="VelocityLabel" type="Label" parent="HBoxContainer"]
 unique_name_in_owner = true
