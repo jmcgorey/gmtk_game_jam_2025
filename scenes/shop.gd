@@ -78,6 +78,7 @@ func purchase_upgrade(upgrade_id: String):
 		# Replace the item with its upgrade
 		var item_def = item_definition_provider.get_definition(def.to_item_id)
 		var cur_shop_item = shop_item_tracker.get_item(def.from_item_id)
+		
 		# - Replace Active Item
 		var active_item = ActiveItemTracker.ActiveItem.from_definition(item_def, cur_shop_item.count)
 		active_item_tracker.replace_item(def.from_item_id, active_item)
@@ -86,6 +87,11 @@ func purchase_upgrade(upgrade_id: String):
 		var shop_item = ShopItemTracker.ShopItem.from_definition(item_def, cur_shop_item.count)
 		shop_item_tracker.replace_item(def.from_item_id, shop_item)
 	
+	# Deduct from point total
+	score_manager.decrement_package_count(def.cost)
+	
+	# Mark as purchased & remove the upgrade from the pool
+	def.is_purchased = true
 	shop_upgrade_tracker.remove_item(upgrade_id)
 
 func on_shop_item_purchase(item_id: String):

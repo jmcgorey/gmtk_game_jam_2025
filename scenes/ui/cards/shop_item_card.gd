@@ -1,4 +1,4 @@
-class_name ShopItemCard extends MarginContainer
+class_name ShopItemCard extends Control
 
 @export var texture: Texture2D
 
@@ -19,7 +19,7 @@ func _ready():
 func set_properties(item: ShopItemTracker.ShopItem) -> void:
 	item_texture.texture = item.texture
 	name_label.text = item.display_name
-	count_label.text = 'x' + str(item.count)
+	count_label.text = 'x' + NumberFormatter.get_pretty_string(item.count)
 	cost_label.text = NumberFormatter.get_pretty_string(item.cost)
 	stored_item = item
 	
