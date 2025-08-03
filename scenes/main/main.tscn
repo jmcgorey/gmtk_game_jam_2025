@@ -1,20 +1,26 @@
-[gd_scene load_steps=11 format=3 uid="uid://rxs4hcjjxjca"]
+[gd_scene load_steps=13 format=3 uid="uid://rxs4hcjjxjca"]
 
 [ext_resource type="Script" uid="uid://c8h8etkdy3fte" path="res://scenes/main/main.gd" id="1_iuonh"]
 [ext_resource type="PackedScene" uid="uid://bvwep6rm04033" path="res://scenes/managers/item_definition_provider.tscn" id="2_blune"]
 [ext_resource type="PackedScene" uid="uid://b5mghruy3a4c2" path="res://scenes/managers/score_manager.tscn" id="2_k2fmo"]
+[ext_resource type="AudioStream" uid="uid://cr5dxcu0r6gcg" path="res://assets/sounds/game_song.mp3" id="2_ouso4"]
 [ext_resource type="PackedScene" uid="uid://pfnx1l3swh53" path="res://scenes/managers/upgrade_definition_provider.tscn" id="3_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://b3bn14l43yjx0" path="res://scenes/trackers/shop_item_tracker.tscn" id="4_th5th"]
 [ext_resource type="PackedScene" uid="uid://bv3mis00dsbbc" path="res://scenes/ui/BoxButtonPanel.tscn" id="5_ow5a4"]
 [ext_resource type="PackedScene" uid="uid://bfmmpetriy0pt" path="res://scenes/shop.tscn" id="6_7smn1"]
+[ext_resource type="PackedScene" uid="uid://b6mwtjwhyow72" path="res://scenes/ui/utils/game_header.tscn" id="7_a8run"]
 [ext_resource type="PackedScene" uid="uid://dl8cychrcyc8i" path="res://scenes/ui/shipping_manifest.tscn" id="7_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://dd4geluil3yiq" path="res://scenes/trackers/active_item_tracker.tscn" id="10_7smn1"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q06x"]
-bg_color = Color(0.589048, 0.323764, 0.0629477, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8run"]
+bg_color = Color(0.443137, 0.443137, 0.576471, 1)
 
 [node name="Main" type="CanvasLayer"]
 script = ExtResource("1_iuonh")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ouso4")
+autoplay = true
 
 [node name="ItemDefinitionProvider" parent="." instance=ExtResource("2_blune")]
 
@@ -28,60 +34,60 @@ script = ExtResource("1_iuonh")
 unique_name_in_owner = true
 active_item_tracker = NodePath("../ActiveItemTracker")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a8run")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="GameHeader" parent="PanelContainer/VBoxContainer" instance=ExtResource("7_a8run")]
+layout_mode = 2
+
+[node name="GameMarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_right = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="TopBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/TopBar"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_6q06x")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/GameMarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="ManifestColumn" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ManifestColumn" type="VBoxContainer" parent="PanelContainer/VBoxContainer/GameMarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ShippingManifest" parent="MarginContainer/VBoxContainer/HBoxContainer/ManifestColumn" node_paths=PackedStringArray("active_items_tracker") instance=ExtResource("7_b1x3f")]
+[node name="ShippingManifest" parent="PanelContainer/VBoxContainer/GameMarginContainer/HBoxContainer/ManifestColumn" node_paths=PackedStringArray("active_items_tracker") instance=ExtResource("7_b1x3f")]
 layout_mode = 2
 size_flags_vertical = 3
-active_items_tracker = NodePath("../../../../../ActiveItemTracker")
+active_items_tracker = NodePath("../../../../../../ActiveItemTracker")
 
-[node name="ClickerColumn" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ClickerColumn" type="VBoxContainer" parent="PanelContainer/VBoxContainer/GameMarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="BoxButtonPanel" parent="MarginContainer/VBoxContainer/HBoxContainer/ClickerColumn" node_paths=PackedStringArray("score_manager") instance=ExtResource("5_ow5a4")]
+[node name="BoxButtonPanel" parent="PanelContainer/VBoxContainer/GameMarginContainer/HBoxContainer/ClickerColumn" node_paths=PackedStringArray("score_manager") instance=ExtResource("5_ow5a4")]
 layout_mode = 2
-score_manager = NodePath("../../../../../ScoreManager")
+score_manager = NodePath("../../../../../../ScoreManager")
 
-[node name="StoreColumn" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="StoreColumn" type="VBoxContainer" parent="PanelContainer/VBoxContainer/GameMarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Shop" parent="MarginContainer/VBoxContainer/HBoxContainer/StoreColumn" node_paths=PackedStringArray("active_item_tracker", "item_definition_provider", "upgrade_definition_provider", "shop_item_tracker", "score_manager") instance=ExtResource("6_7smn1")]
+[node name="Shop" parent="PanelContainer/VBoxContainer/GameMarginContainer/HBoxContainer/StoreColumn" node_paths=PackedStringArray("active_item_tracker", "item_definition_provider", "upgrade_definition_provider", "shop_item_tracker", "score_manager") instance=ExtResource("6_7smn1")]
 layout_mode = 2
 size_flags_vertical = 3
-active_item_tracker = NodePath("../../../../../ActiveItemTracker")
-item_definition_provider = NodePath("../../../../../ItemDefinitionProvider")
-upgrade_definition_provider = NodePath("../../../../../UpgradeDefinitionProvider")
-shop_item_tracker = NodePath("../../../../../ShopItemTracker")
-score_manager = NodePath("../../../../../ScoreManager")
+active_item_tracker = NodePath("../../../../../../ActiveItemTracker")
+item_definition_provider = NodePath("../../../../../../ItemDefinitionProvider")
+upgrade_definition_provider = NodePath("../../../../../../UpgradeDefinitionProvider")
+shop_item_tracker = NodePath("../../../../../../ShopItemTracker")
+score_manager = NodePath("../../../../../../ScoreManager")

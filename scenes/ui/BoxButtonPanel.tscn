@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv3mis00dsbbc"]
+[gd_scene load_steps=4 format=3 uid="uid://bv3mis00dsbbc"]
 
 [ext_resource type="Script" uid="uid://dk6wl2sd84ns0" path="res://scenes/ui/box_button_panel.gd" id="1_vrg8v"]
 [ext_resource type="Texture2D" uid="uid://bb0mf72uwfgpg" path="res://assets/package.png" id="2_mf0jo"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vrg8v"]
+
 [node name="BoxButtonPanel" type="PanelContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vrg8v")
 script = ExtResource("1_vrg8v")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]

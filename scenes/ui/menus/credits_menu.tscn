@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://doi2lqnu2meoc"]
+[gd_scene load_steps=4 format=3 uid="uid://doi2lqnu2meoc"]
 
 [ext_resource type="Script" uid="uid://dvp5x536tcify" path="res://scenes/ui/menus/credits_menu.gd" id="1_6b6gf"]
 [ext_resource type="PackedScene" uid="uid://bo0le4x3uijo7" path="res://scenes/ui/utils/overlay.tscn" id="2_scm5y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6b6gf"]
+bg_color = Color(0.154876, 0.154876, 0.154876, 1)
 
 [node name="OptionsMenu" type="CanvasLayer"]
 layer = 3
@@ -20,6 +23,7 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_6b6gf")
 
 [node name="MarginContainer" type="MarginContainer" parent="FullWindowContainer/PanelContainer"]
 custom_minimum_size = Vector2(200, 150)

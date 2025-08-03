@@ -4,6 +4,8 @@ extends Node
 var shop_upgrade_tracker: ShopUpgradeTracker
 var shop_card_click_handler: Callable
 
+@onready var empty_label: Label = %EmptyLabel
+@onready var card_container: VBoxContainer = %CardContainer
 
 func set_upgrade_tracker(_shop_item_tracker: ShopUpgradeTracker, card_click_handler: Callable):
 	shop_upgrade_tracker = _shop_item_tracker
@@ -17,12 +19,16 @@ func update_view():
 	
 	# Create cards for each item
 	var upgrades = shop_upgrade_tracker.get_all_items()
-	for upgrade in upgrades:
-		create_card(upgrade)
+	if upgrades.is_empty():
+		empty_label.visible = true
+	else:
+		empty_label.visible = false 
+		for upgrade in upgrades:
+			create_card(upgrade)
 
 
 func clear_cards():
-	var children = get_children()
+	var children = card_container.get_children()
 	for child in children:
 		if is_instance_valid(child):
 			child.queue_free()
@@ -30,7 +36,7 @@ func clear_cards():
 
 func create_card(upgrade: ShopUpgradeTracker.ShopUpgrade):
 	var card_instance: ShopUpgradeCard = card_scene.instantiate()
-	add_child(card_instance)
+	card_container.add_child(card_instance)
 	card_instance.set_properties(upgrade)
 	card_instance.upgrade_button_pressed.connect(shop_card_click_handler)
 

@@ -35,7 +35,7 @@ func remove_menu_scene(menu_scene: Node) -> void:
 ## Happens when the "Start" button is pressed
 func _on_start_pressed() -> void:
 	print('Starting game')
-	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+	get_tree().change_scene_to_file("res://scenes/ui/intro_screen.tscn")
 
 
 ## Happens when the "Options" button is pressed

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6mwtjwhyow72"]
+
+[ext_resource type="Script" uid="uid://dg4i413wx4iv7" path="res://scenes/ui/utils/game_header.gd" id="1_2u4gn"]
+[ext_resource type="Texture2D" uid="uid://bb0mf72uwfgpg" path="res://assets/package.png" id="1_4611x"]
+[ext_resource type="Texture2D" uid="uid://ckirpk2jyirtf" path="res://assets/gear.png" id="3_fnc45"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fnc45"]
+bg_color = Color(0.154876, 0.154876, 0.154876, 1)
+
+[node name="GameHeader" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_fnc45")
+script = ExtResource("1_2u4gn")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="PackagePushersIcon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_4611x")
+
+[node name="PackagePushersLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Package Pushers"
+
+[node name="Spacer" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionsButton" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("3_fnc45")

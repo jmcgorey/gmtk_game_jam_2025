@@ -1,0 +1,157 @@
+[gd_scene load_steps=16 format=3 uid="uid://dl42j5lhlil31"]
+
+[ext_resource type="Script" uid="uid://bcoi687cw47l3" path="res://scenes/ui/intro_screen.gd" id="1_aqp6e"]
+[ext_resource type="Texture2D" uid="uid://buw1tospdtk0v" path="res://assets/clip_board.png" id="1_ih0o2"]
+[ext_resource type="PackedScene" uid="uid://b6mwtjwhyow72" path="res://scenes/ui/utils/game_header.tscn" id="1_orp5c"]
+[ext_resource type="AudioStream" uid="uid://cl8jhmbx6iqye" path="res://assets/sounds/The Console (draft).mp3" id="2_867q5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mi1tm"]
+bg_color = Color(0.501961, 0.431373, 0.160784, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_orp5c"]
+texture = ExtResource("1_ih0o2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ih0o2"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orp5c"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqp6e"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_867q5"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w3d5n"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omlgy"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5bmm0"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sm1b1"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3h7hg"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="IntroScreen" type="CanvasLayer"]
+script = ExtResource("1_aqp6e")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_867q5")
+volume_db = 10.0
+autoplay = true
+bus = &"Music"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="GameHeader" parent="VBoxContainer" instance=ExtResource("1_orp5c")]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_mi1tm")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_right = 256
+
+[node name="ClipboardContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orp5c")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ClipboardContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 155
+theme_override_constants/margin_bottom = 64
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ClipboardContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ClipboardContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ClipboardContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Welcome to Package Pushers!"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ClipboardContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "With a little finger grease, gumption, and a few carrier pigeons there’s nothing that can stop you on your way to existential commercial dominion!  Good luck, and Godspeed—the company might be able to run itself one day, but it ain’t gonna start itself!"
+autowrap_mode = 2
+
+[node name="Label3" type="RichTextLabel" parent="VBoxContainer/PanelContainer/MarginContainer/ClipboardContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[u]How to Play[/u]"
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ClipboardContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1. Automation is the name of the game, but manual is how it starts.  Click on the box to deliver one package."
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ClipboardContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "2. Once you've delivered enough packages, you can hire a pigeon to help you deliver more.  Keep going, and you might be able to hire even more help."
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ClipboardContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "3. Become the best package delivery company in the multiverse!"
+autowrap_mode = 2
+
+[node name="StartButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/ClipboardContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_ih0o2")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_orp5c")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_aqp6e")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_867q5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w3d5n")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_omlgy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5bmm0")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_sm1b1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3h7hg")
+text = "Begin"
