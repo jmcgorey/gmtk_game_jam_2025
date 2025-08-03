@@ -119,13 +119,26 @@ theme_override_constants/separation = 16
 layout_mode = 2
 text = "Font - PixelOperator8 by Jayvee Enaguas"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer/ThirdPartyAssetsContainer/ThirdPartyAssetsContainer"]
+layout_mode = 2
+
+[node name="SfxLabel" type="Label" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer/ThirdPartyAssetsContainer/ThirdPartyAssetsContainer/HBoxContainer"]
+layout_mode = 2
+text = "Sound Effects -
+"
+
+[node name="LinkButton" type="LinkButton" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer/ThirdPartyAssetsContainer/ThirdPartyAssetsContainer/HBoxContainer"]
+layout_mode = 2
+text = " Kenney Impact Sounds"
+uri = "https://www.kenney.nl/assets/impact-sounds"
+
 [node name="CreatedForLabel" type="VBoxContainer" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 
-[node name="ThirdPartyAssetsHeader" type="Label" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer/CreatedForLabel"]
+[node name="CreatedFor" type="Label" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer/CreatedForLabel"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://3dvd3sgm66t7"]
+[gd_scene load_steps=5 format=3 uid="uid://3dvd3sgm66t7"]
 
 [ext_resource type="Script" uid="uid://bifktly1hsd5i" path="res://scenes/ui/cards/shop_upgrade_card.gd" id="1_qf70b"]
+[ext_resource type="AudioStream" uid="uid://bketkj4yxtdm4" path="res://assets/sounds/click5.ogg" id="2_imqfm"]
 [ext_resource type="Texture2D" uid="uid://bb0mf72uwfgpg" path="res://assets/package.png" id="2_kdmc3"]
 [ext_resource type="Texture2D" uid="uid://bsp6bjlnhnn07" path="res://assets/shop-items/pigeon.png" id="3_imqfm"]
 
@@ -11,6 +12,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qf70b")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_imqfm")
+bus = &"SFX"
 
 [node name="UpgradeButton" type="Button" parent="."]
 unique_name_in_owner = true

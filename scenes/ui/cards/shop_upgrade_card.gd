@@ -6,6 +6,7 @@ class_name ShopUpgradeCard extends MarginContainer
 @onready var name_label: Label = %NameLabel
 @onready var cost_label: Label = %CostLabel
 @onready var upgrade_texture: TextureRect = %UpgradeTexture
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 var stored_upgrade: ShopUpgradeTracker.ShopUpgrade
 signal upgrade_button_pressed(item_id)
@@ -34,6 +35,8 @@ func set_enabled(score: float):
 	
 
 func on_upgrade_button_pressed():
+	audio_stream_player.play()
+	await audio_stream_player.finished
 	upgrade_button_pressed.emit(stored_upgrade.id)
 
 func on_package_count_changed(pkg_count: float, _all_time_pkgs: float, _avg_pkgs: float):

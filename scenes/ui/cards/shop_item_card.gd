@@ -8,6 +8,8 @@ class_name ShopItemCard extends Control
 @onready var item_texture: TextureRect = %ItemTexture
 @onready var count_label: Label = %CountLabel
 
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
 var stored_item: ShopItemTracker.ShopItem
 signal item_button_pressed(item_id)
 
@@ -36,6 +38,8 @@ func set_enabled(score: float):
 	
 
 func on_item_button_pressed():
+	audio_stream_player.play()
+	await audio_stream_player.finished
 	item_button_pressed.emit(stored_item.id)
 
 func on_package_count_changed(pkg_count: float, _all_time_pkgs: float, _avg_pkgs: float):

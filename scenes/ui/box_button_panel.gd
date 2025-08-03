@@ -2,6 +2,7 @@ extends Node
 
 @onready var package_button: TextureButton = %PackageButton
 @onready var package_count_label: Label = %PackageCountLabel
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 @export var score_manager: ScoreManager
 
@@ -13,6 +14,7 @@ func _ready() -> void:
 
 ## Runs when the package icon is clicked
 func on_package_button_clicked() -> void:
+	audio_stream_player.play()
 	score_manager.increment_package_count(1.0)
 
 
