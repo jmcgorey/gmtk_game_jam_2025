@@ -35,21 +35,98 @@ layout_mode = 2
 
 [node name="CreditsTitle" type="Label" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 text = "Credits"
 horizontal_alignment = 1
 
 [node name="CreditsScrollContainer" type="ScrollContainer" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(800, 500)
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="CreditsContainer" type="VBoxContainer" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 32
 
-[node name="Label" type="Label" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer"]
+[node name="ContibutorsContainer" type="VBoxContainer" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer"]
 layout_mode = 2
-text = "Programming - John"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="ContributorsHeader" type="Label" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer/ContibutorsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Contributors"
+
+[node name="ContributorsContainer" type="VBoxContainer" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer/ContibutorsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="JohnLabel" type="Label" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer/ContibutorsContainer/ContributorsContainer"]
+layout_mode = 2
+text = "John"
+
+[node name="JohnCredits" type="Label" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer/ContibutorsContainer/ContributorsContainer"]
+layout_mode = 2
+text = "- Programming
+- Background Art
+- Game Balance"
+
+[node name="RJLabel" type="Label" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer/ContibutorsContainer/ContributorsContainer"]
+layout_mode = 2
+text = "RJ Mitchell"
+
+[node name="RJCredits" type="Label" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer/ContibutorsContainer/ContributorsContainer"]
+layout_mode = 2
+text = "- Store Art
+- Game Logo
+- Project Management
+- Game Balance
+- Copyediting"
+
+[node name="JamesLabel" type="Label" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer/ContibutorsContainer/ContributorsContainer"]
+layout_mode = 2
+text = "James Kuckkan"
+
+[node name="JamesCredits" type="Label" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer/ContibutorsContainer/ContributorsContainer"]
+layout_mode = 2
+text = "- Concept art
+- Music
+- Copywriting"
+
+[node name="ThirdPartyAssetsContainer" type="VBoxContainer" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="ThirdPartyAssetsHeader" type="Label" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer/ThirdPartyAssetsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Third Party Assets Used"
+
+[node name="ThirdPartyAssetsContainer" type="VBoxContainer" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer/ThirdPartyAssetsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="PixelOperator8Label" type="Label" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer/ThirdPartyAssetsContainer/ThirdPartyAssetsContainer"]
+layout_mode = 2
+text = "Font - PixelOperator8 by Jayvee Enaguas"
+
+[node name="CreatedForLabel" type="VBoxContainer" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="ThirdPartyAssetsHeader" type="Label" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsScrollContainer/CreditsContainer/CreatedForLabel"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Created for the GMTK Game Jam 2025"
+autowrap_mode = 2
 
 [node name="BackButton" type="Button" parent="FullWindowContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
